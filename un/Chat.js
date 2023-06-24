@@ -45,15 +45,23 @@ function bukachat(ids){
 
 // joined();
 function joined (){
+
+
   var validasiHuruf = /^[a-zA-Z]+$/;
-  var nama = document.getElementById("username");
-     // console.log("Nama Anda adalah " + nama.value);
-     var username = $("#username").val();
-     var rooms = "SN_001";
-     // console.log(username);
-     $("#form_login").css("display","none");
-     $("#form_chat").css("display","flex");
-     Login(username,rooms);
+  var nama = $("#username").val();
+
+  if(nama.indexOf("@")!=-1 && email.indexOf(".")!=-1){
+    // console.log("Nama Anda adalah " + nama.value);
+    var username = $("#username").val();
+    var rooms = "SN_001";
+    // console.log(username);
+    $("#form_login").css("display","none");
+    $("#form_chat").css("display","flex");
+    Login(username,rooms);
+            }else{
+                alert("Masukan Format Email Dengan Benar");
+            }
+
          }
 
 
