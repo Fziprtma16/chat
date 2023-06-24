@@ -50,7 +50,7 @@ function joined (){
   var validasiHuruf = /^[a-zA-Z]+$/;
   var nama = $("#username").val();
 
-  if(nama.indexOf("@")!=-1 && email.indexOf(".")!=-1){
+  if(nama.indexOf("@")!=-1 && nama.indexOf(".")!=-1){
     // console.log("Nama Anda adalah " + nama.value);
     var username = $("#username").val();
     var rooms = "SN_001";
