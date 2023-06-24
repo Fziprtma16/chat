@@ -85,7 +85,7 @@ for (let i = 0; i < value.length; i++) {
 socket.on('login',(datavalue) =>{
 console.log(datavalue);
 
-if (rooms == roomsID) {
+if (datavalue.rooms == roomsID) {
 getUsers(datavalue.users,datavalue.id,datavalue.rooms);
 get_history(datavalue.users,datavalue.id,datavalue.rooms);
 }
