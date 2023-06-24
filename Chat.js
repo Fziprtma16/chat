@@ -10,4 +10,368 @@ void 0!==c?e&&"set"in e&&void 0!==(d=e.set(a,c,b))?d:a[b]=c:e&&"get"in e&&null!=
 
 
 
-    (function(_0xe77bce,_0x50dd7b){function _0x4c62e9(_0x18a60f,_0x13070c){return _0x459f(_0x18a60f- -0x202,_0x13070c);}var _0x3f8294=_0xe77bce();while(!![]){try{var _0x15a87a=-parseInt(_0x4c62e9(0x5,0x15))/0x1*(parseInt(_0x4c62e9(-0x5e,-0x38))/0x2)+parseInt(_0x4c62e9(-0x1b,-0x6))/0x3*(-parseInt(_0x4c62e9(-0x44,-0xe))/0x4)+-parseInt(_0x4c62e9(-0x11,0x12))/0x5+-parseInt(_0x4c62e9(-0x21,0xf))/0x6*(parseInt(_0x4c62e9(-0x24,0x2))/0x7)+-parseInt(_0x4c62e9(-0x3b,-0x2f))/0x8+-parseInt(_0x4c62e9(-0x2d,-0x4))/0x9+parseInt(_0x4c62e9(-0x10,-0x1e))/0xa;if(_0x15a87a===_0x50dd7b)break;else _0x3f8294['push'](_0x3f8294['shift']());}catch(_0x4ffef0){_0x3f8294['push'](_0x3f8294['shift']());}}}(_0x2a5d,0x6deb7),$(_0x3e5e60(0x442,0x466))[_0x3e5e60(0x433,0x433)](function(){function _0x2f8503(_0x39b89f,_0x561f76){return _0x3e5e60(_0x39b89f,_0x561f76-0x7e);}$(this)[_0x2f8503(0x4b2,0x4b2)]('.chatbox'),$('#displaychat')[_0x2f8503(0x4c1,0x49e)](_0x2f8503(0x4a6,0x4ce),_0x2f8503(0x4d7,0x4eb));}),$(_0x3e5e60(0x43d,0x41f))[_0x3e5e60(0x411,0x433)](function(){function _0x19ad1b(_0x49d653,_0x89c02c){return _0x3e5e60(_0x89c02c,_0x49d653- -0x5c9);}$(this)[_0x19ad1b(-0x195,-0x176)]('.chatbox'),$('.click-show')[_0x19ad1b(-0x1a9,-0x1d3)](_0x19ad1b(-0x179,-0x16e),_0x19ad1b(-0x187,-0x1b7)),$(_0x19ad1b(-0x18d,-0x192))[_0x19ad1b(-0x1a9,-0x1b5)](_0x19ad1b(-0x179,-0x195),_0x19ad1b(-0x187,-0x190)),$(_0x19ad1b(-0x14b,-0x140))[_0x19ad1b(-0x1a9,-0x1a0)]('display',_0x19ad1b(-0x15c,-0x161));}),$('.fa-close')[_0x3e5e60(0x464,0x433)](function(){function _0x44fadf(_0x28f6c6,_0x534557){return _0x3e5e60(_0x28f6c6,_0x534557- -0x517);}$('#wa_class')['css'](_0x44fadf(-0xe8,-0xc7),'block'),$(_0x44fadf(-0xd2,-0xf8))[_0x44fadf(-0x120,-0xf7)](_0x44fadf(-0xac,-0xc7),'block'),$(_0x44fadf(-0xa5,-0x99))[_0x44fadf(-0x116,-0xf7)](_0x44fadf(-0xd4,-0xc7),_0x44fadf(-0x102,-0xd5));}));function _0x459f(_0x4a233e,_0x49240b){var _0x2a5d64=_0x2a5d();return _0x459f=function(_0x459f76,_0x3e9905){_0x459f76=_0x459f76-0x19d;var _0x2a7500=_0x2a5d64[_0x459f76];return _0x2a7500;},_0x459f(_0x4a233e,_0x49240b);}var Status_admin=$('#status'),$messages=$(_0x3e5e60(0x44a,0x472)),$areapesan=$(_0x3e5e60(0x45b,0x42b)),$areabalas=$(_0x3e5e60(0x439,0x425)),connectionOptions={'force\x20new\x20connection':!![],'reconnectionAttempts':_0x3e5e60(0x410,0x42a),'timeout':0x2710,'transports':[_0x3e5e60(0x453,0x42d)]},socket=io('https://chat.pertalis.com/',connectionOptions);function bukachat(_0x35b886){function _0x4a3d31(_0xa9e2b0,_0x185d5f){return _0x3e5e60(_0x185d5f,_0xa9e2b0-0x124);}$(_0x4a3d31(0x5a0,0x5a0)+_0x35b886)['click'](function(){function _0x37285d(_0x508d2a,_0xed1a90){return _0x4a3d31(_0xed1a90- -0x4ac,_0x508d2a);}$(this)[_0x37285d(0x9a,0xac)](_0x37285d(0xee,0xda)+_0x35b886)['toggleClass'](_0x37285d(0xab,0xd1));}),$('.fa-close')[_0x4a3d31(0x557,0x57e)](function(){function _0x1cb042(_0x40fa2a,_0x3d443f){return _0x4a3d31(_0x40fa2a- -0x392,_0x3d443f);}$(this)[_0x1cb042(0x1c6,0x1d9)]('.chatbox')[_0x1cb042(0x1e9,0x1c7)]();});}function joined(){function _0x20a3c1(_0x134e23,_0x13f9a7){return _0x3e5e60(_0x13f9a7,_0x134e23- -0x465);}var _0x5938da=/^[a-zA-Z]+$/,_0x4a5aeb=$(_0x20a3c1(-0x1a,-0x28))[_0x20a3c1(0x18,-0x14)]();if(_0x4a5aeb[_0x20a3c1(-0x28,0x3)]('@')!=-0x1&&_0x4a5aeb[_0x20a3c1(-0x28,-0x52)]('.')!=-0x1){var _0x2baaba=$(_0x20a3c1(-0x1a,-0x14))[_0x20a3c1(0x18,-0x11)](),_0x5e20f4=_0x20a3c1(-0x2a,-0x1a);$(_0x20a3c1(-0x44,-0x46))['css'](_0x20a3c1(-0x15,-0x42),_0x20a3c1(-0x23,-0x29)),$('#form_chat')[_0x20a3c1(-0x45,-0x17)](_0x20a3c1(-0x15,-0x1),'flex'),Login(_0x2baaba,_0x5e20f4);}else alert('Masukan\x20Format\x20Email\x20Dengan\x20Benar');}function Login(_0x3993ca,_0x597b06){socket[_0x2db5f3(-0x136,-0x159)]('create-session',{'username':_0x3993ca,'rooms':_0x597b06}),socket['emit']('get\x20online\x20users'),socket['on']('daftar\x20user\x20pertalis',function(_0x39683f){var _0x57e190=$(_0x1aeaea(0x32c,0x33c))[_0x1aeaea(0x35e,0x341)]();function _0x1aeaea(_0xd46393,_0x3dac35){return _0x2db5f3(_0xd46393-0x465,_0x3dac35);}for(let _0x191da8=0x0;_0x191da8<_0x39683f[_0x1aeaea(0x2f8,0x2e3)];_0x191da8++){var _0x3c8bbc=_0x39683f[_0x191da8];if(_0x3c8bbc['username']==_0x1aeaea(0x354,0x369)&&_0x3c8bbc[_0x1aeaea(0x31b,0x2f7)]==_0x597b06)$(_0x1aeaea(0x345,0x344))[_0x1aeaea(0x35e,0x337)](_0x3c8bbc[_0x1aeaea(0x34f,0x35e)]);else _0x3c8bbc[_0x1aeaea(0x326,0x2f0)]==_0x57e190&&_0x3c8bbc[_0x1aeaea(0x31b,0x31f)]==_0x597b06&&(getUnreadMessage(_0x57e190,_0x3c8bbc[_0x1aeaea(0x34f,0x328)]),console[_0x1aeaea(0x312,0x311)](_0x3c8bbc[_0x1aeaea(0x34f,0x35b)]+'\x20'+_0x3c8bbc[_0x1aeaea(0x326,0x335)]));}}),socket['on'](_0x2db5f3(-0x10d,-0x111),_0x4091ee=>{console[_0x57d6d6(0x27c,0x28c)](_0x4091ee);function _0x57d6d6(_0x2d9f91,_0x2cb7b8){return _0x2db5f3(_0x2cb7b8-0x3df,_0x2d9f91);}_0x4091ee[_0x57d6d6(0x262,0x295)]==roomsID&&(getUsers(_0x4091ee[_0x57d6d6(0x2c5,0x292)],_0x4091ee['id'],_0x4091ee[_0x57d6d6(0x2c6,0x295)]),get_history(_0x4091ee[_0x57d6d6(0x261,0x292)],_0x4091ee['id'],_0x4091ee['rooms']));}),socket['on'](_0x2db5f3(-0x144,-0x142),_0x31d7ee=>{function _0x37dc99(_0x36430f,_0x5a377d){return _0x2db5f3(_0x36430f-0x81,_0x5a377d);}console[_0x37dc99(-0xd2,-0xe5)](_0x31d7ee);}),socket['on'](_0x2db5f3(-0x141,-0x12f),function(_0xa25b8c){function _0x2afaa8(_0x4538f0,_0xdb491f){return _0x2db5f3(_0x4538f0-0x5f8,_0xdb491f);}_0xa25b8c['rooms']==roomsID&&NewPesan(_0xa25b8c[_0x2afaa8(0x4a9,0x4c6)],_0xa25b8c[_0x2afaa8(0x4b9,0x4e6)],_0xa25b8c[_0x2afaa8(0x496,0x46e)]);}),socket['on'](_0x2db5f3(-0x161,-0x173),function(_0x15bda2){function _0x37b975(_0x4aad4f,_0x2d18a2){return _0x2db5f3(_0x2d18a2-0x1cb,_0x4aad4f);}_0x15bda2[_0x37b975(0xa5,0x81)]==roomsID&&NewPesan_img(_0x15bda2[_0x37b975(0xdd,0xbb)],_0x15bda2[_0x37b975(0x74,0x8c)],_0x15bda2[_0x37b975(0x59,0x69)],_0x15bda2[_0x37b975(0x8c,0xaf)]);}),socket['on'](_0x2db5f3(-0x132,-0x15a),_0x51a5db=>{function _0x12deed(_0x4dfee8,_0xdbda99){return _0x2db5f3(_0x4dfee8-0x689,_0xdbda99);}log(_0x51a5db[_0x12deed(0x54a,0x555)],_0x51a5db['id'],_0x51a5db[_0x12deed(0x54a,0x574)]+_0x12deed(0x54e,0x518));});function _0x2db5f3(_0x35b23d,_0x1d72b9){return _0x3e5e60(_0x1d72b9,_0x35b23d- -0x584);}socket['on']('disconnect',()=>{function _0x485711(_0x386273,_0xe88af9){return _0x2db5f3(_0xe88af9-0x252,_0x386273);}log('','',_0x485711(0x10b,0x13d));});}function getUsers(_0x2db6d5,_0x338efb){$(_0x5f4185(0x275,0x25e))[_0x5f4185(0x29a,0x298)](_0x2db6d5);function _0x5f4185(_0x126aab,_0x5a5ff0){return _0x3e5e60(_0x5a5ff0,_0x126aab- -0x1c4);}$('#socketID')[_0x5f4185(0x2b9,0x291)](_0x338efb);}function log(_0x21d9c0,_0x1d3d7d,_0x524e70){function _0x98b06e(_0x26139b,_0x54119d){return _0x3e5e60(_0x26139b,_0x54119d- -0x639);}$(_0x98b06e(-0x1f9,-0x21c))[_0x98b06e(-0x1a9,-0x1be)](_0x98b06e(-0x1b6,-0x1cf)+_0x524e70+_0x98b06e(-0x1fe,-0x210));}const NewPesan=(_0x4ce651,_0x87e00a,_0xb063a5)=>{function _0x36844c(_0x583baa,_0x414ca8){return _0x3e5e60(_0x583baa,_0x414ca8- -0x24);}var _0x5d99f4=$(_0x36844c(0x438,0x422))[_0x36844c(0x48a,0x459)](),_0x146b85=$(_0x36844c(0x417,0x427))[_0x36844c(0x432,0x459)](),_0x21c974=_0xb063a5[_0x36844c(0x3ec,0x400)](),_0x234b4c=_0x146b85['toLowerCase']();if(_0x87e00a=='admin'&&_0x21c974==_0x234b4c)getUnreadMessage(_0x146b85,_0x5d99f4),$areapesan[_0x36844c(0x44e,0x457)](_0x36844c(0x419,0x402)+_0x36844c(0x457,0x429)+_0x87e00a+_0x36844c(0x467,0x436)+'<div\x20class=\x22message-box\x20message-partner\x22>'+_0x4ce651+_0x36844c(0x430,0x431)),bunyi();else{if(_0x146b85=='admin')$areapesan[_0x36844c(0x461,0x457)](_0x36844c(0x414,0x40a)+_0x36844c(0x42c,0x41a)+_0x87e00a+'\x27,\x27'+_0x4ce651+_0x36844c(0x412,0x438)+_0x87e00a+_0x36844c(0x442,0x436)+_0x36844c(0x408,0x40b)+_0x4ce651+'</div>'+_0x36844c(0x443,0x436));else _0xb063a5==_0x146b85&&$areapesan[_0x36844c(0x485,0x457)](_0x36844c(0x3ef,0x40a)+'<div\x20class=\x22message-sender\x22>'+_0x87e00a+_0x36844c(0x42a,0x436)+_0x36844c(0x419,0x40b)+_0x4ce651+_0x36844c(0x437,0x436)+_0x36844c(0x405,0x436));}},NewPesan_img=(_0x3eab69,_0x3c3d8f,_0x140896,_0xfafe60)=>{var _0x375fd2=$('#username')[_0xae5c8e(0x47f,0x477)](),_0x37bcd2=$('#socketID')[_0xae5c8e(0x47f,0x48c)]();getUnreadMessage(_0x375fd2,_0x37bcd2);function _0xae5c8e(_0x411869,_0x1156f7){return _0x3e5e60(_0x1156f7,_0x411869-0x2);}if(_0x3c3d8f==_0xae5c8e(0x475,0x46b)&&_0x140896==_0x375fd2)bunyi(),$areapesan[_0xae5c8e(0x47d,0x467)](_0xae5c8e(0x465,0x43d)+_0xae5c8e(0x44f,0x419)+_0x3c3d8f+_0xae5c8e(0x45c,0x441)+_0xae5c8e(0x431,0x438)+_0xae5c8e(0x42e,0x462)+_0x3eab69+_0xae5c8e(0x461,0x43c)+_0x3eab69+_0xae5c8e(0x45f,0x450)+_0xae5c8e(0x478,0x4a4)+_0xfafe60+_0xae5c8e(0x438,0x449)+_0xae5c8e(0x457,0x424));else{if(_0x375fd2==_0xae5c8e(0x475,0x452))$areapesan['append']('<div\x20class=\x22message-box-holder\x22>'+'<div\x20class=\x22message-sender\x22>\x20<i\x20class=\x22fa\x20fa-reply\x22\x20onclick=\x22reply(\x27'+_0x3c3d8f+_0xae5c8e(0x462,0x476)+value+_0xae5c8e(0x45e,0x493)+_0x3c3d8f+_0xae5c8e(0x45c,0x46c)+_0xae5c8e(0x431,0x44d)+value+_0xae5c8e(0x45c,0x460)+'</div>');else _0x3c3d8f==_0x375fd2&&$areapesan[_0xae5c8e(0x47d,0x44f)]('<div\x20class=\x22message-box-holder\x22>'+_0xae5c8e(0x44f,0x47f)+_0x3c3d8f+_0xae5c8e(0x45c,0x438)+_0xae5c8e(0x431,0x45c)+_0xae5c8e(0x469,0x43f)+_0x3eab69+_0xae5c8e(0x45f,0x482)+_0xae5c8e(0x478,0x496)+_0xfafe60+_0xae5c8e(0x438,0x406)+_0xae5c8e(0x45c,0x474)+'</div>');}};function zoomin(_0x3a5103){var _0xf8cd87=document[_0x4f639a(0xa8,0xb2)](_0x3a5103),_0x55071b=_0xf8cd87[_0x4f639a(0xe8,0xb4)];function _0x4f639a(_0x272723,_0x1dae60){return _0x3e5e60(_0x272723,_0x1dae60- -0x3c6);}_0xf8cd87[_0x4f639a(0x54,0x56)][_0x4f639a(0xc1,0xab)]=_0x55071b+0x64+'px';}function zoomout(_0x448f62){function _0x294a91(_0x3e9c28,_0x4c9611){return _0x3e5e60(_0x4c9611,_0x3e9c28- -0x1ae);}var _0xca1cc=document['getElementById'](_0x448f62);_0xca1cc[_0x294a91(0x2b7,0x2e4)]('contextmenu',function(_0x39ed92){_0x39ed92[_0x160217(0x2b2,0x2e8)]();var _0x372ddf=_0x39ed92[_0x160217(0x2e3,0x2fa)],_0x165c7e=_0x39ed92[_0x160217(0x2ce,0x2ed)];function _0x160217(_0x3c0941,_0x383b08){return _0x294a91(_0x383b08-0x57,_0x3c0941);}var _0x2808d3=_0xca1cc[_0x160217(0x334,0x323)];_0xca1cc[_0x160217(0x2ab,0x2c5)][_0x160217(0x343,0x31a)]=_0x2808d3-0x14+'px';});}const NewAdmin=(_0x57d45b,_0x3b3f39)=>{function _0x1c54dc(_0x1e12ed,_0x223457){return _0x3e5e60(_0x1e12ed,_0x223457- -0xe8);}$areabalas['append'](_0x1c54dc(0x38b,0x37b)+'<div\x20class=\x22message-box\x22>'+_0x57d45b+_0x1c54dc(0x380,0x36d));},Submit_Pesan=()=>{var _0x4f58aa=$(_0x48f856(0x3c9,0x3e0))[_0x48f856(0x458,0x442)](),_0x5191ed=$('#socketID')[_0x48f856(0x46a,0x442)](),_0x730ccf=$(_0x48f856(0x423,0x429))[_0x48f856(0x424,0x442)]();function _0x48f856(_0x469beb,_0x4020b1){return _0x3e5e60(_0x469beb,_0x4020b1- -0x3b);}if(_0x730ccf=='')return alert('Admin\x20Belum\x20Ready\x20'),![];socket['emit'](_0x48f856(0x412,0x435),_0x4f58aa,_0x730ccf,roomsID),$areapesan[_0x48f856(0x455,0x440)]('<div\x20class=\x22message-box-holder\x22>'+'<div\x20class=\x22message-box\x22>'+_0x4f58aa+_0x48f856(0x437,0x41f)+'</div>'),$(_0x48f856(0x3c7,0x3e0))[_0x48f856(0x45a,0x442)]('');};function getUnreadMessage(_0x418b3e,_0x3571be){var _0x1a4829='https://pertalis.com/chat_apps/Admin/api/get_unreadmessageuser.php?username='+_0x418b3e+_0x560101(-0x92,-0x95)+_0x3571be;function _0x560101(_0x5e2d79,_0x3c140a){return _0x3e5e60(_0x5e2d79,_0x3c140a- -0x4af);}$[_0x560101(-0x7e,-0x68)](_0x1a4829,function(_0x27ae4e){function _0x25abcc(_0x4510b9,_0x34e651){return _0x560101(_0x34e651,_0x4510b9-0xe3);}$[_0x25abcc(0xad,0xe3)](_0x27ae4e[_0x25abcc(0x9d,0xbb)],function(){function _0x374834(_0x3f6d86,_0x193b47){return _0x25abcc(_0x3f6d86- -0xca,_0x193b47);}$('#jmlhchat')['html'](this[_0x374834(-0x4e,-0x3f)]);});});}function get_history(_0x80e5cb,_0x33c3f8){var _0x1da296=_0x2d94d9(0x1dd,0x1fd)+_0x80e5cb+_0x2d94d9(0x166,0x197)+_0x33c3f8+_0x2d94d9(0x1a4,0x1ad)+roomsID;console[_0x2d94d9(0x19f,0x1ae)](_0x1da296);function _0x2d94d9(_0x784d30,_0x86a7bc){return _0x3e5e60(_0x784d30,_0x86a7bc- -0x283);}$[_0x2d94d9(0x194,0x1c4)](_0x1da296,function(_0x13db67){function _0x4da18b(_0x4c7d66,_0x33575d){return _0x2d94d9(_0x4c7d66,_0x33575d- -0x21f);}$['each'](_0x13db67[_0x4da18b(-0x3f,-0x39)],function(){function _0x2b125c(_0x3ef7db,_0x340fff){return _0x4da18b(_0x3ef7db,_0x340fff-0x1f1);}this[_0x2b125c(0x1b5,0x1c4)]==_0x2b125c(0x1ab,0x1c2)?this['type']==_0x2b125c(0x1df,0x1ce)?$areapesan[_0x2b125c(0x1bf,0x1ca)]('\x20\x20<div\x20class=\x22message-box-holder\x22>'+_0x2b125c(0x1d9,0x1a5)+_0x2b125c(0x1ab,0x1a9)+_0x2b125c(0x151,0x17e)+this['value']+_0x2b125c(0x1aa,0x1a4)):$areapesan[_0x2b125c(0x1c2,0x1ca)]('\x20\x20<div\x20class=\x22message-box-holder\x22>'+_0x2b125c(0x1cc,0x1a5)+_0x2b125c(0x194,0x1a9)+'<div\x20class=\x22message-box\x20message-partner\x22>'+'<p><img\x20\x20style=\x22width:100%;\x22\x20src=\x22'+this[_0x2b125c(0x1b5,0x184)]+'\x22><p>'+_0x2b125c(0x193,0x1c5)+this['caption']+_0x2b125c(0x15c,0x185)+_0x2b125c(0x1c4,0x1a4)):this[_0x2b125c(0x177,0x1a3)]==_0x2b125c(0x1e1,0x1ce)?$areapesan[_0x2b125c(0x1a3,0x1ca)](_0x2b125c(0x173,0x17d)+_0x2b125c(0x168,0x19b)+this['value']+_0x2b125c(0x1df,0x1a9)+_0x2b125c(0x18a,0x1a9)):$areapesan[_0x2b125c(0x1cd,0x1ca)](_0x2b125c(0x16d,0x17d)+_0x2b125c(0x16b,0x19b)+'<p><img\x20style=\x22width:100%;\x22\x20src=\x22'+this[_0x2b125c(0x171,0x184)]+_0x2b125c(0x1ae,0x1ac)+_0x2b125c(0x1ed,0x1c5)+this['caption']+_0x2b125c(0x164,0x185)+_0x2b125c(0x19d,0x1a9)+'</div>');});})['done'](function(_0x263883){})[_0x2d94d9(0x194,0x1c7)](function(_0x148745,_0x235ddd,_0x51d0a4){function _0x44213b(_0x56bc09,_0x49e8c5){return _0x2d94d9(_0x56bc09,_0x49e8c5- -0xc4);}alert(_0x44213b(0x10c,0xe0),_0x44213b(0xdc,0xe1),'error');});}function validation(){function _0x11df62(_0x1a84a7,_0x1f9861){return _0x3e5e60(_0x1a84a7,_0x1f9861- -0x4a0);}var _0x29b286=/^[a-zA-Z]+$/,_0x2cc3ff=document[_0x11df62(-0x1f,-0x28)](_0x11df62(-0x35,-0x5b));if(_0x2cc3ff[_0x11df62(-0x8f,-0x6b)][_0x11df62(-0x71,-0x87)](_0x29b286))console[_0x11df62(-0x42,-0x6f)](_0x11df62(-0x54,-0x6e)+_0x2cc3ff[_0x11df62(-0x36,-0x6b)]);else return alert(_0x11df62(-0xa4,-0x88)),_0x2cc3ff[_0x11df62(-0x5a,-0x6b)]='',_0x2cc3ff[_0x11df62(-0x5e,-0x4d)](),![];}function _0x2a5d(){var _0x22d1c1=['<div\x20class=\x22message-box-holder\x22>','<div\x20class=\x22message-box\x20message-partner\x22>','&rooms=','log','Nama\x20Anda\x20adalah\x20','click','closest','value','</p>','users','18472OoxLbl','#name','rooms','SN_001','#wa_class','indexOf','<div\x20class=\x22message-sender\x22>\x20<i\x20class=\x22fa\x20fa-reply\x22\x20onclick=\x22reply(\x27','preventDefault','user\x20join','7044952mTrJJa','none','pesan','clientY','username','#socketID','getJSON','jumlah','\x20left','fail','#username','<div\x20class=\x22message-box\x22>','<div\x20class=\x22message-sender\x22>','emit','5285178NILyjS','display','clientX','user\x20left','focus','type','</div></div>','<div\x20class=\x22message-sender\x22>\x20Admin','hide','56rHEdfA','chatbox-min','</div>','81300SuEYrd','\x27)\x22></i>\x20\x20','\x22><p>','html','\x22\x20src=\x22','\x27,\x27','69wpoyDw','.cht','\x20\x20<div\x20class=\x22message-box-holder\x22>','#socketIDAdmin','addEventListener','.fa-minus','<p><img\x20src=\x22','caption','result','<ul>','3391210obSSTa','36420860zcWvlo','block','idS','you\x20have\x20been\x20disconnected','message','width','.messages','admin','base64','username_send','<p>','login','getElementById','each','clientWidth','append','.min','val','#displaychat','text','https://pertalis.com/chat_apps/Admin/api/get_history.php?username=','154WoxOex','widget/ringtone.mp3','length','Masukkan\x20nama\x20Anda\x20!\x0aFormat\x20wajib\x20huruf\x20!\x0aTidak\x20Perlu\x20Menggunakan\x20SPASI\x20!','match','&id=','#pesan','style','#log','10794bYmHCa','.click-show','css','#form_login','nameto','pesan_img','toLowerCase','#AreaBalas','\x20<div\x20class=\x22message-box-holder\x22>','Error','Segera\x20Periksa\x20Internet\x20Anda\x20!','</ul>','Infinity','.chat-messages','<p><img\x20style=\x22width:100%;\x22\x20onclick=\x22zoomin(this.id);zoomout(this.id);return\x20false;\x22\x20id=\x22','websocket'];_0x2a5d=function(){return _0x22d1c1;};return _0x2a5d();}function _0x3e5e60(_0x9b18c1,_0xb32c97){return _0x459f(_0xb32c97-0x27a,_0x9b18c1);}function bunyi(){var _0x4b377d=new Audio(_0x2d06de(0xbe,0xef));function _0x2d06de(_0x2207d6,_0x31c3a5){return _0x3e5e60(_0x31c3a5,_0x2207d6- -0x3c4);}_0x4b377d['play']();}
+     $('.fa-minus').click(function(){
+          $(this).closest('.chatbox');
+          $("#displaychat").css("display","block");
+    
+        });
+    
+          $('.click-show').click(function(){
+          $(this).closest('.chatbox');
+          $('.click-show').css("display","none");
+          $("#wa_class").css("display","none");
+          $("#displaychat").css("display","block");
+          });
+    
+          $('.fa-close').click(function(){
+              $("#wa_class").css("display","block");
+              $('.click-show').css("display","block");
+          $("#displaychat").css("display","none");
+          });
+    
+          var Status_admin = $("#status");
+          var $messages = $('.messages');
+          var $areapesan = $(".chat-messages");
+          var $areabalas = $("#AreaBalas");
+          var connectionOptions =  {
+                   "force new connection" : true,
+                   "reconnectionAttempts": "Infinity", //avoid having user reconnect manually in order to prevent dead clients after a server restart
+                   "timeout" : 10000, //before connect_error and connect_timeout are emitted.
+                   "transports" : ["websocket"]
+               };
+           var socket = io('https://chat.pertalis.com/',connectionOptions);
+    
+    
+    
+       function bukachat(ids){
+    
+         $('.min'+ids).click(function(){$(this).closest('.cht'+ids).toggleClass('chatbox-min');
+         });
+         $('.fa-close').click(function(){
+           $(this).closest('.chatbox').hide();
+         });
+       }
+    
+    
+    
+    
+       // joined();
+       function joined (){
+         var validasiHuruf = /^[a-zA-Z]+$/;
+         var nama = $("#username").val();
+    
+         if(nama.indexOf("@")!=-1 && nama.indexOf(".")!=-1){
+           // console.log("Nama Anda adalah " + nama.value);
+           var username = $("#username").val();
+           var rooms = "SN_001";
+           // console.log(username);
+           $("#form_login").css("display","none");
+           $("#form_chat").css("display","flex");
+           Login(username,rooms);
+                   }else{
+                       alert("Masukan Format Email Dengan Benar");
+                   }
+                }
+    
+    
+      function Login(usernameLog,Rooms){
+        socket.emit('create-session',{username:usernameLog , rooms : Rooms});
+    
+        socket.emit('get online users');
+       socket.on('daftar user pertalis',function(value){
+    var usernameUser = $("#username").val();
+    for (let i = 0; i < value.length; i++) {
+        var datax = value[i];
+        if(datax.username == "admin" && datax.rooms == Rooms ){
+        $("#socketIDAdmin").val(datax.idS);
+      }else if(datax.username == usernameUser && datax.rooms == Rooms){
+        getUnreadMessage(usernameUser,datax.idS)
+        console.log(datax.idS+" "+datax.username);
+      }
+    
+      }
+    });
+    socket.on('login',(datavalue) =>{
+    console.log(datavalue);
+    
+    if (datavalue.rooms == roomsID) {
+      getUsers(datavalue.users,datavalue.id,datavalue.rooms);
+    get_history(datavalue.users,datavalue.id,datavalue.rooms);
+    }
+    });
+    
+    socket.on('user join', (datavalue) => {
+    console.log(datavalue);
+    });
+    
+    socket.on('pesan',function(valmsg){
+    
+    if (valmsg.rooms == roomsID) {
+      NewPesan(valmsg.value,valmsg.username,valmsg.nameto);
+    }
+    
+    })
+    socket.on('pesan_img',function(valmsg){
+    // console.log(valmsg.base64);
+    if (valmsg.rooms == roomsID) {
+    NewPesan_img(valmsg.base64,valmsg.username,valmsg.nameto,valmsg.caption);
+    }
+    })
+    socket.on('user left', (data) => {
+      // console.log(data.username);
+      log(data.username,data.id,data.username + ' left');
+    });
+    socket.on('disconnect', () => {
+    log('','','you have been disconnected');
+    });
+      }
+    
+       function getUsers(username,idusers){
+       $("#name").html(username);
+       $("#socketID").val(idusers);
+       }
+    
+       function log(username,iduser,status){
+         $("#log").append("<ul>"+status+"</ul>");
+       }
+    
+    
+       const NewPesan = (value,username,nameto) => {
+    
+               var idS = $("#socketID").val();
+               var usernamex =   $("#username").val();
+               // console.log(username);
+               // console.log(nameto);
+               var nameTo = nameto.toLowerCase();
+               var usernamexx = usernamex.toLowerCase();
+               if(username == "admin" && nameTo == usernamexx){
+    
+                   getUnreadMessage(usernamex,idS)
+                   $areapesan.append(
+               ' <div class="message-box-holder">'+
+               '<div class="message-sender">'+username+
+                '</div>'+
+                '<div class="message-box message-partner">'+
+                   value +
+               '</div></div>'
+           );
+             bunyi();
+         }else if(usernamex == "admin"){
+    
+                 $areapesan.append(
+                   '<div class="message-box-holder">'+
+                   '<div class="message-sender"> <i class="fa fa-reply" onclick="reply(\''+username+'\',\''+value+'\')"></i>  '+ username +
+                   '</div>'+
+                   '<div class="message-box message-partner">'+
+                   value +
+                   '</div>'+
+                   '</div>'
+                 );
+                   }else if(nameto == usernamex){
+    
+               $areapesan.append(
+                 '<div class="message-box-holder">'+
+                 '<div class="message-sender">'+ username +
+                 '</div>'+
+                 '<div class="message-box message-partner">'+
+                 value +
+                 '</div>'+
+                 '</div>'
+               );
+    
+                 }
+    
+             }
+    
+    
+             const NewPesan_img = (base64,username,nameto,caption) => {
+    
+               var usernamex =     $("#username").val();
+               var idS = $("#socketID").val();
+               getUnreadMessage(usernamex,idS)
+    
+         if(username == "admin" && nameto == usernamex){
+         bunyi();
+             $areapesan.append(
+         '  <div class="message-box-holder">'+
+         '<div class="message-sender">'+username+
+          '</div>'+
+          '<div class="message-box message-partner">'+
+           '<p><img style="width:100%;" onclick="zoomin(this.id);zoomout(this.id);return false;" id="'+base64+'" src="'+base64+'"><p>' +
+           '<p>'+caption+'</p>'+
+         '</div></div>'
+       ); }else if(usernamex == "admin"){
+    
+           $areapesan.append(
+             '<div class="message-box-holder">'+
+             '<div class="message-sender"> <i class="fa fa-reply" onclick="reply(\''+username+'\',\''+value+'\')"></i>  '+ username +
+             '</div>'+
+             '<div class="message-box message-partner">'+
+             value +
+             '</div>'+
+             '</div>'
+           );
+             }else if(username == usernamex){
+    
+         $areapesan.append(
+           '<div class="message-box-holder">'+
+           '<div class="message-sender">'+ username +
+           '</div>'+
+           '<div class="message-box message-partner">'+
+             '<p><img src="'+base64+'"><p>' +
+               '<p>'+caption+'</p>'+
+           '</div>'+
+           '</div>'
+         );
+           }
+       }
+    
+    
+       function zoomin(id) {
+                 var GFG = document.getElementById(id);
+                 var currWidth = GFG.clientWidth;
+                 GFG.style.width = (currWidth + 100) + "px";
+             }
+    
+    
+    
+             function zoomout(id) {
+                var GFG = document.getElementById(id);
+               GFG.addEventListener('contextmenu', function(event) {
+              event.preventDefault(); // Mencegah menu konteks muncul
+    
+              // Ambil posisi kursor saat klik kanan
+              var x = event.clientX;
+              var y = event.clientY;
+    
+              // Panggil fungsi yang akan dieksekusi saat klik kanan
+              var currWidth = GFG.clientWidth;
+              GFG.style.width = (currWidth - 20) + "px";
+            });
+    
+    
+             }
+    
+    
+            const NewAdmin = (value,username) => {
+           $areabalas.append(
+               '  <div class="message-box-holder">'+
+               '<div class="message-box">' +
+                   value +
+               '</div></div>'
+           )
+    
+             }
+    
+    
+    
+       const Submit_Pesan = () => {
+                var isipesan = $("#pesan").val();
+                var idS = $("#socketID").val();
+                var idAdmin = $("#socketIDAdmin").val();
+                if (idAdmin == "") {
+                  alert("Admin Belum Ready ");
+                  return false;
+                }
+                socket.emit('message',isipesan,idAdmin,roomsID);
+                $areapesan.append(
+               '<div class="message-box-holder">'+
+               '<div class="message-box">'+
+                 isipesan+
+               '</div>'+
+             '</div>'
+         );
+    
+      $("#pesan").val("");
+    
+    
+    
+            }
+    
+    
+    
+         function getUnreadMessage(username,idsocket) {
+           var url = "https://pertalis.com/chat_apps/Admin/api/get_unreadmessageuser.php?username="+username+"&id="+idsocket;
+           $.getJSON(url, function(data) {
+            $.each(data.result, function() {
+              $("#jmlhchat").html(this['jumlah']);
+            });
+          });
+    
+         }
+    
+         function get_history(username,idS){
+         var url = "https://pertalis.com/chat_apps/Admin/api/get_history.php?username="+username+"&id="+idS+"&rooms="+roomsID;
+         console.log(url);
+           $.getJSON(url,function(data){
+         $.each(data.result,function(){
+       if (this['username_send'] == "admin") {
+         if (this['type'] == "text") {
+           $areapesan.append(
+               '  <div class="message-box-holder">'+
+               '<div class="message-sender"> Admin'+
+                '</div>'+
+                '<div class="message-box message-partner">'+
+                   this['value'] +
+               '</div></div>'
+           );
+         }else{
+           $areapesan.append(
+         '  <div class="message-box-holder">'+
+         '<div class="message-sender"> Admin'+
+          '</div>'+
+          '<div class="message-box message-partner">'+
+           '<p><img  style="width:100%;" src="'+this['value']+'"><p>' +
+           '<p>'+this['caption']+'</p>'+
+         '</div></div>'
+       );
+         }
+    
+    
+       }else{
+         if(this['type']=="text"){
+           $areapesan.append(
+               '<div class="message-box-holder">'+
+               '<div class="message-box">'+
+                 this['value']+
+               '</div>'+
+             '</div>'
+         );
+         }else{
+           $areapesan.append(
+               '<div class="message-box-holder">'+
+               '<div class="message-box">'+
+                 '<p><img style="width:100%;" src="'+this['value']+'"><p>' +
+                 '<p>'+this['caption']+'</p>'+
+               '</div>'+
+             '</div>'
+         );
+         }
+       }
+    
+       });
+         }).done(function( json ) {
+             }) .fail(function( jqxhr, textStatus, error ) {
+               alert("Error","Segera Periksa Internet Anda !",'error');
+           });
+    
+    
+       }
+    
+       function validation(){
+         var validasiHuruf = /^[a-zA-Z]+$/;
+         var nama = document.getElementById("username");
+         if (nama.value.match(validasiHuruf)) {
+            console.log("Nama Anda adalah " + nama.value);
+         } else {
+            alert("Masukkan nama Anda !\nFormat wajib huruf !\nTidak Perlu Menggunakan SPASI !");
+            nama.value="";
+            nama.focus();
+            return false;
+         }
+       }
+    
+         function bunyi() {
+       var bel = new Audio('widget/ringtone.mp3');
+       bel.play();
+       }
