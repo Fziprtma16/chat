@@ -57,7 +57,7 @@ function joined (){
     // console.log(username);
     $("#form_login").css("display","none");
     $("#form_chat").css("display","flex");
-    Login(username,rooms);
+    Login(username,roomsID);
             }else{
                 alert("Masukan Format Email Dengan Benar");
             }
