@@ -1,0 +1,1136 @@
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<link rel="stylesheet" href="css/style3.css">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+<link rel="stylesheet" href="js/emoji/emojibuttonlistjs.css" />
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<html>
+  <head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" type="text/css" rel="stylesheet" />
+  </head>
+  <body>
+    <style>
+      .zoom {
+  padding: 50px;
+  transition: transform .2s; /* Animation */
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  cursor:zoom-in;
+}
+
+.zoom:hover {
+  transform: scale(2.0); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+      .received_withd_msg p {
+       background: #ebebeb none repeat scroll 0 0;
+       border-radius: 3px;
+       color: #646464;
+       font-size: 20px;
+       margin: 0;
+       padding: 5px 10px 5px 12px;
+       width: 100%;
+     }
+
+     .sent_msg p {
+      background: #05728f none repeat scroll 0 0;
+      border-radius: 3px;
+      font-size: 20px;
+      margin: 0; color:#fff;
+      padding: 5px 10px 5px 12px;
+      width:100%;
+    }
+
+    .chat_ib h5{ font-size:20px; color:#464646; margin:0 0 8px 0;}
+    .chat_ib h5 span{ font-size:20px; float:right;}
+    .chat_ib p{ font-size:18px; color:#989898; margin:auto}
+      .msg_emoji,
+      .msg_file {
+        background: #05728f;
+        color: #fff;
+        font-size: 17px;
+        height: 33px;
+        position: absolute;
+        top: 11px;
+        width: 33px;
+        margin-left: 10px;
+        cursor: pointer;
+      }
+      .chat_list,
+      .msg_emoji,
+      .msg_file {
+        cursor: pointer;
+      }
+      body {
+        background-image: url("https://cdn.wallpapersafari.com/61/71/Al8i1t.jpg");
+
+      }
+      .msg_emoji {
+        border: none;
+        border-radius: 50%;
+        right: 50;
+        margin-right: 30px;
+      }
+      .msg_file {
+        border: none;
+        border-radius: 50%;
+        right: 30;
+        margin-right: 10px;
+      }
+      .custom-scroll-bars {
+        display: block;
+        top: 750;
+      }
+      .active-chat {
+        display: block;
+        font-size:20px;
+      }
+
+      .non-activecht {
+        display: none;
+      }
+      .inbox_chat {
+        height: 100%;
+      }
+      .mesgs{
+        height :100%;
+      }
+      .msg_history{
+        height:90%;
+      }
+
+      .inbox_msg {
+        background-color: #fff;
+      }
+
+    </style>
+
+    <!-- Button trigger modal -->
+<button type="button" style="display:none;" class="btn btn-primary" data-bs-toggle="modal" id="modalbutton" data-bs-target="#exampleModal">
+  Modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Input Rooms</h5>
+        <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+      </div>
+      <div class="modal-body">
+        <label for="" class="text-center">Masukan Kode Rooms</label>
+        <br>
+        <input type="text" id="idroms" onchange="DisabledEnabledRooms()" placeholder="Masukan Kode Rooms" class="form-control" name="" value="">
+      </div>
+      <div class="modal-footer">
+        <button type="button" style="display:none;" id="tutupmodal" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" onclick="GetSubmit()" id="closebutton" disabled class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <h1 style="display: none;" id="name"></h1>
+    <input type="text" id="socketID" hidden>
+    <input hidden type="text" value="admin" readonly id="username">
+    <input hidden type="text"  readonly id="roomsID">
+    <br>
+    <button style="display: none;" onclick="joined()" id="joined">daftar</button>
+    <div class="container">
+    <div class="row">
+      <div class="accordion col-lg-3" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> List User  <span class="badge bg-secondary ms-2" id="jumlah_user">0</span></button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <div id="navbar">
+                <ul id="userslog"></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion col-lg-3" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingtwo">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapsetwo" aria-expanded="true" aria-controls="collapsetwo"> User Online <span class="badge bg-secondary ms-2" id="jumlah_online"></span>
+            </button>
+          </h2>
+          <div id="collapsetwo" class="accordion-collapse collapse" aria-labelledby="headingtwo" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <div id="navbar">
+                <ul id="usersonline"></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion col-lg-3" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapsetree" aria-expanded="true" aria-controls="collapsetree"> Notifikasi <span class="badge bg-secondary ms-2" id="jumlah_notif">0</span>
+
+            </button>
+          </h2>
+          <div id="collapsetree" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <div id="navbar">
+                <div class="col-lg-12" id="alert"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+    <div class="container ">
+      <h3 class=" text-center"></h3>
+      <div class="messaging">
+        <div class="inbox_msg">
+          <div class="inbox_people">
+            <div class="headind_srch">
+              <div class="recent_heading">
+                <h4>Chat Widget</h4>
+              </div>
+              <div class="srch_bar">
+                <div class="stylish-input-group">
+                  <input type="text" onkeyup="find_my_div()" id="edit_search" class="search-bar" placeholder="Search User">
+                  <span class="input-group-addon">
+                    <button type="button">
+                      <i class="fa fa-search" aria-hidden="true"></i>
+                    </button>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="inbox_chat" id="listchatbox"></div>
+          </div>
+          <div class="cht-box" id="cht-box"></div>
+        </div>
+      </div>
+    </div>
+    <!-- Button trigger modal -->
+    <button type="button" style="display: none;" id="show_image" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop"> Launch static backdrop modal </button>
+    <!-- Button ViewImage modal -->
+    <button type="button" style="display: none;" id="view_image" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#viewMage"> Launch static backdrop modal </button>
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">View Image</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <input type="text" hidden name="" id="idSendimg">
+            <input type="text" hidden id="nameSendimg">
+            <input type="text" hidden id="Base64IMG">
+            <canvas style="width: 100%;" id="our-canvas" class="image-container"></canvas>
+            <br>
+            <label for="">Caption :</label>
+            <input type="text" onkeypress="return enterImg(event)" class="form-control" id="caption_img">
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="close_show" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" onclick="send_img()" class="btn btn-primary">Send</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="viewMage" data-bs-backdrop="imageview" data-bs-keyboard="false" tabindex="-1" aria-labelledby="imageview" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">View Image</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="zoom">
+            <img  src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif" style="width:100%;height:100%;" class="js-amplify" id="image_view_data" >
+              </div>
+          </div>
+          <div class="modal-footer">
+
+            <button type="button" id="close_show" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </body>
+</html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+<script src="js/emoji/emojibuttonlistjs.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/push.js/1.0.8/push.min.js" integrity="sha512-eiqtDDb4GUVCSqOSOTz/s/eiU4B31GrdSb17aPAA4Lv/Cjc8o+hnDvuNkgXhSI5yHuDvYkuojMaQmrB5JB31XQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script type="text/javascript">
+      var connectionOptions = {
+              "force new connection": true,
+              "reconnectionAttempts": "Infinity", //avoid having user reconnect manually in order to prevent dead clients after a server restart
+              "timeout": 10000, //before connect_error and connect_timeout are emitted.
+              "transports": ["polling"],
+              "path" : "/socket.io",
+          };
+          		var socket = io('https://chat.pertalis.com/',connectionOptions);
+      // var socket = io('http://116.197.135.158:8101', connectionOptions, (err) => {
+      //     // alert(`connect_error due to ${err.message}`);
+      //     location.reload();
+      // });
+
+      //Document Ready
+      $(document).ready(function() {
+      $("#modalbutton").click();
+        //Push Notifikasi
+         // Push.Permission.request(onGranted, onDenied);
+         // var username = $("#username").val();
+         // socket.emit('create-session', username);
+      });
+
+      //Chek Id Roms
+      function DisabledEnabledRooms(){
+        var id_rooms = $("#idroms").val();
+        if (id_rooms != "") {
+            $("#closebutton").attr("disabled", false);
+        }else{
+            $("#closebutton").attr("disabled", true);
+        }
+
+      }
+      //Check Roms
+      function GetSubmit(){
+        var id_rooms = $("#idroms").val();
+
+        $.ajax({
+           type: 'POST',
+           url: 'api/check_rooms.php',
+           data : "idrooms="+id_rooms
+        }).success(function(response) {
+            if (response == "ada") {
+              $("#roomsID").val(id_rooms);
+              $("#tutupmodal").click();
+              joined()
+              GetDataUser(id_rooms);
+              console.log(id_rooms);
+            }else{
+              alert('Id Rooms Tidak Valid !');
+            }
+        });
+
+      }
+
+      //Notifikasi Di Izinkan
+      function onGranted() {
+         console.log("Anda Akan Menerima Notifikasi Chat !");
+      }
+
+      //Notifikasi Tidak Di Izinkan
+      function onDenied() {
+         alert("Anda Tidak Akan Menerima Notifikasi Chat !");
+      }
+
+      //Param Jumlah Notif
+      var jumlah_notif = 0;
+
+      //Mengurangi Jumlah Notif
+      function kurang_notif() {
+         jumlah_notif -= 1;
+         $("#jumlah_notif").html(jumlah_notif);
+      }
+
+
+      //Mendeteksi Socket Error
+      socket.addEventListener('error', (event) => {
+         location.reload();
+      });
+
+
+
+      //Funtion Buka Chat
+      function bukachat(ids) {
+         $('.min' + ids).click(function() {
+            $(this).closest('.cht' + ids).toggleClass('chatbox-min');
+         });
+         $('.fa-close').click(function() {
+            $(this).closest('.chatbox').hide();
+         });
+      }
+
+
+      //function Join Chat To Socket Io
+      function joined() {
+        var rooms = $("#roomsID").val();
+         var username = $("#username").val();
+         alert("Anda Masuk Rooms "+rooms);
+         socket.emit('create-session', {username : username , rooms : rooms});
+      }
+
+
+      //Mendapatkan Users
+      function getUsers(username, idusers) {
+         $("#name").html(username);
+         $("#socketID").val(idusers);
+      }
+
+      //Log User
+      function log(username, iduser, status, clas) {
+         $("#log").append("<li class='list-group-item list-group-item-" + clas + "' >" + status + "</li>");
+      }
+
+      //function Submit Pesan
+      const Submit_Pesan = (idS) => {
+         var isipesan = $("#pesan" + idS).val();
+         var rooms = $("#roomsID").val();
+
+         socket.emit('message', isipesan, idS,rooms);
+         let current = new Date();
+         let cDate = current.getFullYear() + '-' + (current.getMonth() + 1) + '-' + current.getDate();
+         let cTime = current.getHours() + ":" + current.getMinutes() + ":" + current.getSeconds();
+         let dateTime = cDate + ' ' + cTime;
+         $("#msg" + idS).append(
+            '<div class="outgoing_msg">' +
+            '<div class="sent_msg">' +
+            '<p>' + isipesan + '</p>' +
+            '<span class="time_date">' + dateTime + '</span> </div>' +
+            '</div>'
+         );
+
+         $("#pesan" + idS).val('');
+
+      }
+
+      //Function Enter Kebawah Pada TextArea Pesan
+      function enterKeyPressed(event, idS) {
+         var pesan = document.getElementById('pesan' + idS);
+         if (event.shiftKey) {
+         }
+         if (event.shiftKey && event.keyCode == 13) {
+            pesan.value += '\n';
+         }
+         else if (event.keyCode == 13) {
+            Submit_Pesan(idS)
+         }
+      }
+
+      //Logs User online
+      function logsON(value) {
+        var rooms = $("#roomsID").val();
+
+         $("#userslog").empty();
+         for (let i = 0; i < value.length; i++) {
+            var datax = value[i];
+            if (datax.rooms == rooms) {
+            if (datax.username != "admin" || datax.username == "") {
+               $("#userslog").append("<li>" + datax.username + "</li>");
+            }
+          }
+         }
+      }
+
+      //Conversi Waktu UTC
+      function convertUTCDateToLocalDate(date) {
+         var newDate = new Date(date.getTime() - date.getTimezoneOffset() * 60 * 1000);
+         return newDate;
+      }
+
+      //Log Status User
+      function logsstatus(value) {
+        var rooms = $("#roomsID").val();
+         $("#usersonline").empty();
+
+         var count = 0;
+         for (let i = 0; i < value.length; i++) {
+            var datax = value[i];
+            if (datax.rooms == rooms) {
+            if (datax.username != "admin" || datax.username == "") {
+               var date = new Date(datax.activeTime);
+               var dateString = date.toLocaleString("en-US", {
+                  year: 'numeric',
+                  month: '2-digit',
+                  day: '2-digit',
+                  hour: '2-digit',
+                  minute: '2-digit',
+                  second: '2-digit',
+                  timeZone: 'Asia/Jakarta'
+               });
+               $("#usersonline").append("<li>" + datax.username + "</li>");
+               $("#ket_" + datax.idS).html("Active");
+               $("#status_" + datax.idS).html("Online");
+               $("#activelast_" + datax.idS).html(dateString);
+               count++
+            }
+          }
+         }
+              $("#jumlah_online").html(count);
+      }
+
+      //Log User Baru
+      function logNewUser(username) {
+         var user_nonx = "";
+         let navbar = document
+            .getElementById("navbar")
+            .querySelectorAll('li');
+
+         navbar.forEach((item, index) => {
+            if (item.innerHTML == username) {
+               user_nonx = user_nonx + username;
+            }
+         });
+         if (user_nonx != username) {
+            if (username != "admin" || username == "") {
+               $("#userslog").append("<li>" + username + "</li>");
+            }
+         }
+      }
+
+      //Box Daftar User
+      function daftaruser(value) {
+         $("#chatbox").empty();
+         var rooms = $("#roomsID").val();
+         for (let i = 0; i < value.length; i++) {
+            var datax = value[i];
+            if (datax.rooms == rooms) {
+            if (datax.username != "admin" || datax.username == "") {
+               var date = new Date(datax.activeTime);
+               var dateString = date.toLocaleString("en-US", {
+                  year: 'numeric',
+                  month: '2-digit',
+                  day: '2-digit',
+                  hour: '2-digit',
+                  minute: '2-digit',
+                  second: '2-digit',
+                  timeZone: 'Asia/Jakarta'
+               });
+               $("#listchatbox").append(
+                  '<div class="chat_list name list-' + datax.idS + '"  id="user_' + i + '" onclick="show_chat(\'' + datax.username + '\',\'' + datax.idS + '\')">' +
+                  '<div class="chat_people">' +
+                  '<div class="chat_img" > <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>' +
+                  '<div class="chat_ib " >' +
+                  '<h5>' + datax.username + ' <span id="unread' + datax.idS + '" class="badge bg-danger">0</span></h5>' +
+                  '<p  id="ket_' + datax.idS + '">Non Active</p>' +
+                  '<p  id="activelast_' + datax.idS + '">' + dateString + '</p>' +
+                  '</div>' +
+                  '</div>' +
+                  '</div>');
+            }
+          }
+         }
+         $("#cht-box").empty();
+         for (let i = 0; i < value.length; i++) {
+            const val = value[i];
+                if (val.rooms == rooms) {
+            if (val.username != "admin" || val.username == "") {
+               $("#cht-box").append(
+                  '<div class="chat-boxnya boxnya-' + val.idS + ' non-activecht" id="boxID-' + val.idS + '">' +
+                  '<div style="width:60%;float:left" >' +
+                  '<div class="bg-secondary">' +
+                  '<div class="chat_img me-2" sty >  <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>' +
+                  '<h6 class="text-white"> <br>' + val.username + '<br><span id="status_' + val.idS + '">Offline</span></h6>' +
+                  '</div>' +
+                  '</div>' +
+                  '<div class="mesgs  cht' + val.idS + '" id="chtbox' + val.idS + '" >' +
+                  '<div class="msg_history msg' + val.idS + ' chat' + val.idS + ' " id="msg' + val.idS + '">' +
+
+                  '</div>' +
+                  '<div class="type_msg">' +
+                  '<div class="input_msg_write">' +
+                  '<input id="fileid' + val.idS + '" onchange="return validasiEkstensi(\'' + val.idS + '\') " type="file" hidden/>' +
+                  '<textarea name="name" rows="2" cols="89" type="text" onkeypress="return enterKeyPressed(event,\'' + val.idS + '\')" class="write_msg" id="pesan' + val.idS + '" placeholder="Type a message" ></textarea>' +
+                  '<button  class="msg_emoji"  style="border:none;" id="button' + val.idS + '"><i class="fa fa-smile-o"></i></button>' +
+                  '<button  class="msg_file" onclick="openFILE(\'' + val.idS + '\')" style="border:none;" id="button' + val.idS + '"><i class="fa fa-picture-o"></i></button>' +
+                  '<button class="msg_send_btn" type="button"><i class="fa fa-paper-plane-o"   onclick="Submit_Pesan(\'' + val.idS + '\')" aria-hidden="true"></i></button>' +
+                  '</div>' +
+                  '</div>' +
+                  '</div>' +
+                  '</div>'
+               );
+
+               var margin = 10,
+                  instance1 = new emojiButtonList("button" + val.idS, {
+                     dropDownXAlign: "left",
+                     textBoxID: "pesan" + val.idS,
+                     yAlignMargin: margin,
+                     xAlignMargin: margin
+                  })
+            }
+          }
+         }
+      }
+
+
+      //Box Input Pesan Kepada User
+      function newuser(username, idS) {
+         var user_non = "";
+         let navbar = document
+            .getElementById("navbar")
+            .querySelectorAll('li');
+
+         navbar.forEach((item, index) => {
+            if (item.innerHTML == username) {
+               user_non = user_non + username;
+            }
+         });
+         if (user_non != username) {
+            if (username != "admin" || username == "") {
+               $("#listchatbox").append(
+                  '<div class="chat_list name list-' + idS + '"  id="user_' + idS + '" onclick="show_chat(\'' + username + '\',\'' + idS + '\')">' +
+                  '<div class="chat_people">' +
+                  '<div class="chat_img" > <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>' +
+                  '<div class="chat_ib " >' +
+                  '<h5>' + username + ' <span id="unread' + idS + '" class="badge bg-danger">0</span></h5>' +
+                  '<p id="ket_' + idS + '">Active</p>' +
+                  '</div>' +
+                  '</div>' +
+                  '</div>');
+            }
+
+            if (username != "admin" || username == "") {
+               $("#cht-box").append(
+                  '<div class="chat-boxnya boxnya-' + idS + ' non-activecht" id="boxID-' + idS + '">' +
+                  '<div style="width:60%;float:left" >' +
+                  '<div class="bg-secondary">' +
+                  '<div class="chat_img me-2" sty > <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>' +
+                  '<h6 class="text-white"> <br>' + username + '<br>    <span id="status_' + idS + '">Online</span></h6>' +
+                  '</div>' +
+                  '</div>' +
+                  '<div class="mesgs  cht' + idS + '" id="chtbox' + idS + '" >' +
+                  '<div class="msg_history msg' + idS + ' chat' + idS + ' " id="msg' + idS + '">' +
+
+                  '</div>' +
+                  '<div class="type_msg">' +
+                  '<div class="input_msg_write">' +
+                  '<input id="fileid' + idS + '" onchange="return validasiEkstensi(\'' + idS + '\')" type="file" hidden/>' +
+                  '<input type="text" onkeypress="return enterKeyPressed(event,\'' + idS + '\')" class="write_msg" id="pesan' + idS + '" placeholder="Type a message" />' +
+                  '<button  class="msg_emoji"  style="border:none;" id="button' + idS + '"><i class="fa fa-smile-o"></i></button>' +
+                  '<button  class="msg_file" onclick="openFILE(\'' + idS + '\')" style="border:none;" id="button' + idS + '"><i class="fa fa-picture-o"></i></button>' +
+                  '<button class="msg_send_btn" type="button"><i class="fa fa-paper-plane-o"   onclick="Submit_Pesan(\'' + idS + '\')" aria-hidden="true"></i></button>' +
+                  '</div>' +
+                  '</div>' +
+                  '</div>' +
+                  '</div>'
+               );
+               var margin = 10,
+                  instance1 = new emojiButtonList("button" + idS, {
+                     dropDownXAlign: "left",
+                     textBoxID: "pesan" + idS,
+                     yAlignMargin: margin,
+                     xAlignMargin: margin
+                  })
+            }
+         }
+
+      }
+
+
+
+      //Menapilkan Pesan Dan Mengupdate Status Pesan
+      function show_chat(username, idS) {
+         console.log(username + "   " + idS);
+         var data = new FormData();
+         data.append('username', username);
+         data.append('idsocket', idS);
+         $.ajax({
+            type: 'POST',
+            url: 'api/update_status_chat.php',
+            data: data,
+            contentType: 'multipart/form-data',
+            cache: false,
+            processData: false,
+            contentType: false,
+         }).success(function(response) {
+            getUnreadMessage(username, idS);
+         });
+         const nextBtn = document.querySelectorAll('.chat_list');
+
+         var divs = document.querySelectorAll('.chat-boxnya');
+         divs.forEach((step, stepIndex) => {
+            const hasClass = step.classList.contains('boxnya-' + idS);
+            console.log(step);
+            if (hasClass) {
+               step.classList.add('active-chat');
+               step.classList.remove('non-activecht');
+
+            }
+            else {
+               step.classList.add('non-activecht');
+            }
+
+
+         });
+      }
+
+
+      //Function Mencari User Di Box Pesan
+      function gid(a_id) {
+         return document.getElementById(a_id);
+      }
+
+      function close_all() {
+         for (i = 0; i < 999; i++) {
+            var o = gid("user_" + i);
+            if (o) {
+               o.style.display = "block";
+            }
+         }
+
+      }
+      function find_my_div() {
+         close_all();
+         var o_edit = gid("edit_search");
+         var str_needle = edit_search.value;
+         str_needle = str_needle.toUpperCase();
+         var searchStrings = str_needle.split(/\W/);
+
+         for (var i = 0, len = searchStrings.length; i < len; i++) {
+            var currentSearch = searchStrings[i].toUpperCase();
+            if (currentSearch !== "") {
+               nameDivs = document.getElementsByClassName("name");
+               for (var j = 0, divsLen = nameDivs.length; j < divsLen; j++) {
+                  if (nameDivs[j].textContent.toUpperCase().indexOf(currentSearch) !== -1) {
+                     nameDivs[j].style.display = "block";
+                  }
+                  else {
+                     nameDivs[j].style.display = "none";
+                  }
+               }
+            }
+         }
+      }
+      //Sampai Sini
+
+
+      //Function Emji
+      function emojiClickEvent(emojiText) {
+         document.title += " " + emojiText;
+      }
+
+      //Socket Login Untuk Mendapatkan Seluruh User
+      socket.on('login', (datavalue) => {
+        var rooms = $("#roomsID").val();
+        if (rooms == datavalue.rooms) {
+         // console.log(datavalue.users + "+" + datavalue.id);
+         getUsers(datavalue.users, datavalue.id);
+       }
+      });
+
+
+      //User Join Dan Alert User ketika Join
+      socket.on('user join', (datavalue) => {
+        var rooms = $("#roomsID").val();
+        if (datavalue.rooms == rooms) {
+         log(datavalue.users, datavalue.id, datavalue.users + ' join', 'success');
+         // console.log(datavalue.users + " " + datavalue.id + " " + datavalue.users + ' join success');
+         jumlah_notif = jumlah_notif + 1;
+         $("#jumlah_notif").html(jumlah_notif);
+         $("#collapsetree").addClass('show');
+         $("#alert").append(
+            '<div class="alert alert-success alert-dismissible fade show" role="alert">' +
+            '<strong>' + datavalue.users + ' Login !</strong> ' +
+            '<button onclick="kurang_notif()" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' +
+            '</div>'
+         );
+         $("#ket_" + datavalue.id).html("Active");
+         $("#status_" + datavalue.id).html("Online");
+         newuser(datavalue.users, datavalue.id);
+         logNewUser(datavalue.users);
+       }
+      });
+
+
+      //Socket Untuk Mendapatkan Online User Serta Mencari Data Pesan
+      function GetDataUser (rooms){
+      socket.emit('get online users');
+      socket.on('daftar_user', function(value) {
+         console.log(value);
+         daftaruser(value);
+         logsON(value);
+         get_msg(value);
+         // console.log(value.length);
+         var dtluser = "";
+         var count = 0;
+
+         for (var i = 0; i < value.length; i++) {
+            var data = value[i];
+            if (data.rooms == rooms) {
+
+            if (data.username != "admin") {
+
+              count ++;
+            var username = data.username + "|";
+            dtluser = dtluser + username;
+            console.log(data.rooms);
+          }
+        }
+            // getUnreadMessage(data.username, data.idS);
+         }
+         console.log(dtluser);
+            $("#jumlah_user").html(count);
+         var url = "./api/get_unreadmessage_ready.php?username=" + dtluser;
+         $.getJSON(url, function(data) {
+            $.each(data.result, function() {
+               // console.log(this['jumlah']);
+               $("#unread" + this['idS']).html(this['jumlah']);
+            });
+         });
+
+         //Mencari Data Get Ketika Notifikasi Di Pencet
+         const urlParams = new URLSearchParams(location.search);
+         const IdsocketGet = urlParams.get('idS');
+         const UsernameGet = urlParams.get('username');
+         console.log(IdsocketGet);
+         console.log(UsernameGet);
+
+         if (IdsocketGet) {
+            var divbox = document.getElementById('boxID-' + IdsocketGet);
+            const cekclass = divbox.classList.contains('boxnya-' + IdsocketGet);
+            // console.log(cekclass);
+
+            //Mengactivekan Box Chat
+            divbox.classList.add('active-chat');
+            divbox.classList.remove('non-activecht');
+
+            var data = new FormData();
+            data.append('username', UsernameGet);
+            data.append('idsocket', IdsocketGet);
+            $.ajax({
+               type: 'POST',
+               url: 'api/update_status_chat.php',
+               data: data,
+               contentType: 'multipart/form-data',
+               cache: false,
+               processData: false,
+               contentType: false,
+            }).success(function(response) {
+               getUnreadMessage(username, idS);
+            });
+         }
+         // console.log(dtluser);
+      });
+
+      socket.emit('active users');
+      socket.on('active_user', function(value) {
+         // console.log(value);
+         // console.log("data active");
+
+         logsstatus(value);
+
+      });
+    }
+
+      //Memvalidasi Extensi Upload
+      function validasiEkstensi(idS) {
+         var inputFile = document.getElementById('fileid' + idS);
+         var pathFile = inputFile.value;
+         var ekstensiOk = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
+         if (!ekstensiOk.exec(pathFile)) {
+            alert('Silakan upload file Gambar !');
+            inputFile.value = '';
+            return false;
+         }
+         else {
+            ChangeForm(idS);
+         }
+      }
+
+      //Untuk Open File
+      function openFILE(idS) {
+         document.getElementById('fileid' + idS).click();
+      }
+
+      //Function ChangeForm Untuk View Gambar
+      function ChangeForm(idS) {
+         const docs = $('#fileid' + idS).prop('files')[0];
+         $("#idSendimg").val(idS);
+         handleFile(docs);
+         var base64 = getBase64(docs);
+      }
+
+      //Function Click Image Untuk View Gambar
+      function clickImage(base64) {
+         console.log(base64);
+         $("#view_image").click();
+         $("#image_view_data").attr("src", base64);
+
+      }
+
+      //Kirim File Image Di Upload Menu
+      function send_img() {
+         var idS = $("#idSendimg").val();
+         var base64 = $("#Base64IMG").val();
+         var caption = $("#caption_img").val();
+         var rooms = $("#roomsID").val();
+         socket.emit('send_img', base64, idS, caption,rooms);
+         let current = new Date();
+         let cDate = current.getFullYear() + '-' + (current.getMonth() + 1) + '-' + current.getDate();
+         let cTime = current.getHours() + ":" + current.getMinutes() + ":" + current.getSeconds();
+         let dateTime = cDate + ' ' + cTime;
+         $("#msg" + idS).append(
+            '<div class="outgoing_msg">' +
+            '<div class="sent_msg">' +
+            '<p><img style="cursor:pointer;" onclick="clickImage(\'' + base64 + '\')" src="' + base64 + '"></p>' +
+            '<p>' + caption + '</p>' +
+            '<span class="time_date">' + dateTime + '</span> </div>' +
+            '</div>'
+         );
+         $("#idSendimg").val('');
+         $("#Base64IMG").val('');
+         $("#caption_img").val('');
+         $("#close_show").click();
+      }
+
+      //Function Enter Untuk Mengirim Gambar
+      function enterImg(event) {
+         if (event.keyCode == 13) {
+            send_img()
+         }
+      }
+
+      //Merubah Image Menjadi Base 64
+      function getBase64(file) {
+         var reader = new FileReader();
+         reader.readAsDataURL(file);
+         reader.onload = function() {
+            // console.log(reader.result);
+            $("#Base64IMG").val(reader.result);
+         };
+         reader.onerror = function(error) {
+            console.log('Error: ', error);
+         };
+      }
+
+
+      //Mendapatkan  Message
+      function get_msg(value) {
+         var alluser = "";
+         var rooms = $("#roomsID").val();
+         for (var i = 0; i < value.length; i++) {
+            var data = value[i];
+            if (data.rooms == rooms) {
+            var user = data.username + "|";
+            alluser = alluser + user;
+          }
+         }
+
+         var url = "./api/get_history_chat.php?username=" + alluser+"&rooms="+rooms;
+         $.getJSON(url, function(data) {
+            $.each(data.result, function() {
+               if (this['username_send'] == "admin") {
+
+                  if (this['type'] == "text") {
+                     $(".chat" + this['id_receive']).append(
+                        '<div class="outgoing_msg">' +
+                        '<div class="sent_msg">' +
+                        '<p>' + this['value'] + '</p>' +
+                        '<span class="time_date">' + this['time'] + '</span> </div>' +
+                        '</div>'
+                     );
+                  }
+                  else {
+                     // console.log(this['value']);
+                     $(".chat" + this['id_receive']).append(
+                        '<div class="outgoing_msg">' +
+                        '<div class="sent_msg">' +
+                        '<p><img style="cursor:pointer;" onclick="clickImage(\'' + this['value'] + '\')" src="' + this['value'] + '"></p>' +
+                        '<p>' + this['caption'] + '</p>' +
+                        '<span class="time_date">' + this['time'] + '</span> </div>' +
+                        '</div>'
+                     );
+                  }
+
+               }
+               else if (this['username_send'] != "admin") {
+                  if (this['type'] == "text") {
+                     $(".chat" + this['id_send']).append(
+                        '<div class="incoming_msg">' +
+                        '<div class="incoming_msg_img"><img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>' +
+                        '<div class="received_msg">' +
+                        '<span>' + this['username_send'] + '</span>' +
+                        '<div class="received_withd_msg">' +
+                        '<p>' + this['value'] + '</p>' +
+                        '<span class="time_date"> ' + this['time'] + ' </span></div>' +
+                        '</div>' +
+                        '</div>'
+                     );
+                  }
+                  else {
+                     $(".chat" + this['id_send']).append(
+                        '<div class="incoming_msg">' +
+                        '<div class="incoming_msg_img"><img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>' +
+                        '<div class="received_msg">' +
+                        '<span>' + this['username_send'] + '</span>' +
+                        '<div class="received_withd_msg">' +
+                        '<p><img style="cursor:pointer;"  onclick="clickImage(\'' + this['value'] + '\')" src="' + this['value'] + '"></p>' +
+                        '<p>' + this['caption'] + '</p>' +
+                        '<span class="time_date"> ' + this['time'] + ' </span></div>' +
+                        '</div>' +
+                        '</div>'
+                     );
+                  }
+               }
+            });
+         });
+
+      }
+
+      //Mencari Message Yang belum terbaca
+      function getUnreadMessage(username, idsocket) {
+         var url = "./api/get_unreadmessage.php?username=" + username;
+         $.getJSON(url, function(data) {
+            $.each(data.result, function() {
+               $("#unread" + idsocket).html(this['jumlah']);
+            });
+         });
+
+      }
+
+
+
+      //Upload File
+      function uploadFile(idS) {
+         $('#uploadfile').bind('change', function(e) {
+            var data = e.originalEvent.target.files[0];
+            readThenSendFile(data, idS);
+         });
+      }
+
+
+      //Merubah File Menjadi View Canvas
+      function handleFile(file) {
+         var canvas = document.getElementById('our-canvas'),
+            context = canvas.getContext('2d');
+         var ImageType = /image.*/;
+
+         if (file.type.match(ImageType)) {
+
+            var reader = new FileReader();
+
+            reader.onloadend = function(event) {
+               var tempImageStore = new Image();
+               tempImageStore.onload = function(ev) {
+                  canvas.height = ev.target.height;
+                  canvas.width = ev.target.width;
+                  context.drawImage(ev.target, 0, 0);
+               }
+               tempImageStore.src = event.target.result;
+            }
+            reader.readAsDataURL(file);
+         }
+         $("#show_image").click();
+      }
+
+
+      //Socket Kirim Pesan
+      socket.on('pesan', function(valmsg) {
+        var rooms = $("#roomsID").val();
+        if (valmsg.rooms == rooms) {
+         $('#chtbox' + valmsg.from).removeClass("chatbox-min").addClass("chatbox");
+         var IDstatus = "#status" + valmsg.from;
+         $(IDstatus).removeClass("donot-disturb").addClass("online");
+
+         let current = new Date();
+         let cDate = current.getFullYear() + '-' + (current.getMonth() + 1) + '-' + current.getDate();
+         let cTime = current.getHours() + ":" + current.getMinutes() + ":" + current.getSeconds();
+         let dateTime = cDate + ' ' + cTime;
+         jumlah_notif = jumlah_notif + 1;
+
+         // Push.create("Pesan Dari " + valmsg.username, {
+         //    body: valmsg.value,
+         //    icon: ".jpeg",
+         //    timeout: 5000,
+         //    onClick: function() {
+         //       // console.log(this);
+         //    }
+         // });
+         getUnreadMessage(valmsg.username, valmsg.from);
+         $("#jumlah_notif").html(jumlah_notif);
+         $("#collapsetree").addClass('show');
+
+
+
+         $("#alert").append(
+            '<div style="cursor:pointer;"  class="alert alert-warning alert-dismissible fade show" role="alert">' +
+            '<strong style="cursor:pointer;" onclick="show_chat(\'' + valmsg.username + '\',\'' + valmsg.from + '\')" >New Message From ' + valmsg.username + ' !</strong> ' + valmsg.value +
+            '<button onclick="kurang_notif()" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' +
+            '</div>'
+         );
+
+         if (valmsg.id != valmsg.from) {
+            $("#msg" + valmsg.from).append(
+               '<div class="incoming_msg">' +
+               '<div class="incoming_msg_img"><img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>' +
+               '<div class="received_msg">' +
+               '<span>' + valmsg.username + '</span>' +
+               '<div class="received_withd_msg">' +
+               '<p>' + valmsg.value + '</p>' +
+               '<span class="time_date"> ' + dateTime + ' </span></div>' +
+               '</div>' +
+               '</div>'
+            );
+
+
+         }
+         else if (valmsg.id == valmsg.from) {
+            $("#msg" + valmsg.id).append(
+               '<div class="incoming_msg">' +
+               '<div class="incoming_msg_img"><img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>' +
+               '<div class="received_msg">' +
+               '<span>' + valmsg.username + '</span>' +
+               '<div class="received_withd_msg">' +
+               '<p>' + valmsg.value + '</p>' +
+               '<span class="time_date"> ' + dateTime + ' </span></div>' +
+               '</div>' +
+               '</div>'
+            );
+
+         }
+         bunyi();
+       }
+      })
+
+      //Socket User Offline
+      socket.on('user left', (data) => {
+        var rooms = $("#roomsID").val();
+        console.log(data.rooms);
+        if (rooms == data.rooms) {
+         $("#ket_" + data.id).html("Non Active");
+         $("#status_" + data.id).html("Offline");
+         log(data.username, data.id, data.username + ' left', 'danger');
+         jumlah_notif = jumlah_notif + 1;
+         $("#jumlah_notif").html(jumlah_notif);
+         $("#collapsetree").addClass('show');
+         $("#alert").append(
+            '<div class="alert alert-danger alert-dismissible fade show" role="alert">' +
+            '<strong>' + data.username + ' Logout !</strong> ' +
+            '<button onclick="kurang_notif()" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' +
+            '</div>'
+         );
+       }
+      });
+
+
+
+      //Socket User Disconnected
+      socket.on('disconnect', () => {
+         log('', '', 'you have been disconnected');
+         // location.reload();
+      });
+
+      //Function Bunyi Notifikasi
+      function bunyi() {
+         var bel = new Audio('ringtone/chat.mp3');
+         bel.play();
+      }
+
+        </script>
