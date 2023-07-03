@@ -569,6 +569,32 @@ session_start();
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pako/2.0.4/pako.min.js"></script>
     <script src="https://code.createjs.com/1.0.0/soundjs.min.js"></script>
    <script type="text/javascript">
+   var linkSources = [
+  'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css',
+  'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'
+];
+
+linkSources.forEach(function(href) {
+  var link = document.createElement('link');
+  link.href = href;
+  link.setAttribute('rel', 'stylesheet');
+  link.setAttribute('type', 'text/css');
+  document.head.appendChild(link);
+});
+   var scriptSources = [
+     'https://code.iconify.design/2/2.2.0/iconify.min.js',
+     'https://cdn.socket.io/3.1.3/socket.io.min.js',
+     'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js',
+     'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js',
+     'https://cdn.jsdelivr.net/npm/gasparesganga-jquery-loading-overlay@2.1.7/dist/loadingoverlay.min.js',
+     'https://cdnjs.cloudflare.com/ajax/libs/pako/2.0.4/pako.min.js'
+   ];
+   scriptSources.forEach(function(src) {
+  var script = document.createElement('script');
+  script.src = src;
+  script.setAttribute('type', 'text/javascript');
+  document.head.appendChild(script);
+});
 
    var roomsID = "AP_001";
  GetLayananBot()
@@ -1032,7 +1058,8 @@ session_start();
  }
 
  function bunyi() {
-   var bel = new Audio('widget/smile.ogg');
+   var bel = new Audio();
+   bel.src = 'https://github.com/indriyani13/chat/blob/main/new/smile.ogg';
    bel.play();
  }
    </script>
