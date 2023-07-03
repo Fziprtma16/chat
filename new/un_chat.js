@@ -61,7 +61,6 @@ link.setAttribute('type', 'text/css');
 document.head.appendChild(link);
 });
 
-var roomsID = "AP_001";
 GetLayananBot()
 AturStyle()
 $('.fa-minus').click(function() {
