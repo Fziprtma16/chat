@@ -641,6 +641,8 @@ linkSources.forEach(function(href) {
      var obj = JSON.parse(response);
      if (obj.url_gambar != "") {
        $("#gambar_widget").attr("src", obj.url_gambar);
+     }else{
+       $("#gambar_widget").attr("src","https://sofwareshop.com/appstore/widget_enc/live-chat.png");
      }
      if (obj.posisi_widget != "") {
        if (obj.posisi_widget == "right") {
@@ -657,9 +659,13 @@ linkSources.forEach(function(href) {
        }
        if (obj.icon_admin != "") {
          $("#icon_admin").attr("src", obj.icon_admin);
+       }else{
+         $("#icon_admin").attr("src","https://www.cse.iitk.ac.in/users/sumitl/assets/images/40-512.png");
        }
        if (obj.nama_widget != "") {
          $("#nama_admin").text(obj.nama_widget);
+       }else{
+           $("#nama_admin").text("Live Chat");
        }
        if (obj.warna_top != "") {
          $(".chatbox-top").css("background", obj.warna_top);
