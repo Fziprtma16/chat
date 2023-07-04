@@ -1,89 +1,99 @@
-// document.write('<script src="https://cdn.socket.io/3.1.3/socket.io.min.js" integrity="sha384-cPwlPLvBTa3sKAgddT6krw0cJat7egBga3DJepJyrLl4Q9/5WLra3rrnMcyTyOnh" crossorigin="anonymous"><\/script>');
-// document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"><\/script>');
- document.write('<script src="https://cdn.jsdelivr.net/npm/gasparesganga-jquery-loading-overlay@2.1.7/dist/loadingoverlay.min.js" charset="utf-8"><\/script>');
-// document.write('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" \/>');
-document.write("<div id=\"popup\" class=\"popup\">");
-document.write("  <div class=\"popup-content\">");
-document.write("    <div style=\"align-items: flex-end;\">");
-document.write("    </div>");
-document.write("    <h3>Kirim Gambar</h3>");
-document.write("    <br>");
-document.write("    <canvas style=\"width:350px;height:300px\" id=\"our-canvas\" class=\"image-container\"></canvas>");
-document.write("    <input type=\"text\" hidden  id=\"Base64IMG\">");
-document.write("    <input type=\"text\" placeholder=\"Caption\" class=\"form-control\" style=\"margin-top:50px;\" id=\"caption_img\">");
-document.write("    <br>");
-document.write("    <button type=\"button\" onclick=\"send_img()\" class=\"btn btn-primary\">Send</button>");
-document.write("    <button type=\"button\" onclick=\"closePopup()\" class=\"btn btn-danger mr-3\">Cancel</button>");
-document.write("  </div>");
-document.write("</div>");
-document.write("");
-document.write("");
-document.write("");
-document.write(" <h1 id=\"name\" style=\"display:none;\"></h1>");
-document.write("   <h1 style=\"display: none;\" id=\"log\"></h1>");
-document.write("   <h1 style=\"display: none;\" id=\"idnya\"></h1>");
-document.write(" <input type=\"text\" hidden id=\"socketID\">");
-document.write(" <input type=\"text\" hidden id=\"socketIDAdmin\">");
-document.write("");
-document.write(" <div class=\"chatbutton \">");
-document.write("  <a href=\"javascript:void(0);\" class=\"click-show\">");
-document.write("    <span id=\"jmlhchat\" style=\"position:absolute;top:-15px;right:-5px;font-size:12px;display:none;\" class=\"translate-middle badge rounded-pill text-dark bg-info\">");
-document.write("      0");
-document.write("    </span>");
-document.write("    <img src=\"widget/live-chat.png\" id=\"gambar_widget\" style=\"width:80px;\"  alt=\"Chat-Button\">");
-document.write("  </a>");
-document.write(" </div>");
-document.write("");
-document.write(" <div id=\"displaychat\" style=\"display:none;\">");
-document.write("   <div class=\"chatbox-holder\">");
-document.write("       <div class=\"chatbox\" id=\"chatbbox\">");
-document.write("         <div class=\"chatbox-top\">");
-document.write("           <div class=\"chatbox-avatar\">");
-document.write("             <a target=\"_blank\" href=\"\"><img id=\"icon_admin\" src=\"https://cdn-icons-png.flaticon.com/128/2543/2543339.png\" /></a>");
-document.write("           </div>");
-document.write("           <div class=\"chat-partner-name\">");
-document.write("             <a target=\"_blank\" id=\"nama_admin\" href=\"\">Live Chat</a>");
-document.write("           </div>");
-document.write("           <div class=\"chatbox-icons\">");
-document.write("      ");
-document.write("             <a href=\"javascript:void(0);\"><i class=\"fa fa-close\"></i></a>");
-document.write("           </div>");
-document.write("         </div>");
-document.write("         <div class=\"container-fluid col-lg-12 p-4\" id=\"form_layanan\">");
-document.write("           <h3>Hallo ... </h3>");
-document.write("           <div class=\"list-group\"  id=\"groupLayanan\">");
-document.write("           </div>");
-document.write(" <br>");
-document.write(" <button class=\"btn btn-info text-white\" onclick=\"MenghubugkanAdmin()\">Hubungkan Saya Ke Admin</button>");
-document.write("          </div>");
-document.write("         <div class=\"container-fluid col-lg-12 \" style=\"display:none;\" id=\"form_login\">");
-document.write("           <input type=\"text\" placeholder=\"Email\" class=\"form-control\" style=\"margin-top:50px;\" id=\"username\">");
-document.write("           <br>");
-document.write("");
-document.write("           <button onclick=\"joined()\" class=\"btn btn-info float-left text-white\" id=\"submit\">Submit</button>");
-document.write("          </div>");
-document.write("");
-document.write("         <div class=\"chat-messages\" id=\"chhhtt\">");
-document.write("");
-document.write("         </div>");
-document.write("");
-document.write("         <div class=\"chat-input-holder\" style=\"display:none;\" id=\"form_chat\">");
-document.write("           <textarea id=\"pesan\" placeholder=\"Write Your Message\" class=\"chat-input\"></textarea>");
-document.write("           <div class=\"file_img\">");
-document.write("             <i class=\"fa fa-image fa-xl\" onclick=\"openFILE()\"></i>");
-document.write("           </div>");
-document.write("           <input id=\"fileid\" onchange=\"return validasiEkstensi() \" type=\"file\" hidden/>");
-document.write("");
-document.write("           <button type=\"submit\"  onclick=\"Submit_Pesan()\" class=\"message-send\" >");
-document.write("           <img src=\"https://cdn-icons-png.flaticon.com/128/9131/9131510.png\" style=\"width:20px;margin-bottom: 20px;color:blue;\" alt=\"\">");
-document.write("         </button>");
-document.write("");
-document.write("         </div>");
-document.write("               <small>&copy; 2023 Powered By CrashTeam.</small>");
-document.write("       </div>");
-document.write("     </div>");
-document.write("   </div>");
-
+var variable = "" +
+"<div id=\"popup\" class=\"popup\">" +
+"  <div class=\"popup-content\">" +
+"    <div style=\"align-items: flex-end;\">" +
+"   <!--    <a href=\"javascript:void(0);\"><i id=\"click\" class=\"fa fa-minus\"></i></a> -->" +
+"    </div>" +
+"    <h3>Kirim Gambar</h3>" +
+"    <br>" +
+"    <canvas style=\"width:350px;height:300px\" id=\"our-canvas\" class=\"image-container\"></canvas>" +
+"    <input type=\"text\" hidden  id=\"Base64IMG\">" +
+"    <input type=\"text\" placeholder=\"Caption\" class=\"form-control\" style=\"margin-top:50px;\" id=\"caption_img\">" +
+"    <br>" +
+"    <button type=\"button\" onclick=\"send_img()\" class=\"btn btn-primary\">Send</button>" +
+"    <button type=\"button\" onclick=\"closePopup()\" class=\"btn btn-danger mr-3\">Cancel</button>" +
+"  </div>" +
+"</div>" +
+"" +
+"" +
+"" +
+" <h1 id=\"name\" style=\"display:none;\"></h1>" +
+"   <h1 style=\"display: none;\" id=\"log\"></h1>" +
+"   <h1 style=\"display: none;\" id=\"idnya\"></h1>" +
+" <!-- <input type=\"text\" placeholder=\"Email\" id=\"username\"> -->" +
+" <input type=\"text\" hidden id=\"socketID\">" +
+" <input type=\"text\" hidden id=\"socketIDAdmin\">" +
+"" +
+" <!-- <button onclick=\"joined()\" style=\"display:none;\" id=\"submit\">Submit</button> -->" +
+"" +
+" <div class=\"chatbutton \">" +
+"  <a href=\"javascript:void(0);\" class=\"click-show\">" +
+"    <span id=\"jmlhchat\" style=\"position:absolute;top:-15px;right:-5px;font-size:12px;display:none;\" class=\"translate-middle badge rounded-pill text-dark bg-info\">" +
+"      0" +
+"    </span>" +
+"    <img src=\"widget/live-chat.png\" id=\"gambar_widget\" style=\"width:80px;\"  alt=\"Chat-Button\">" +
+"  </a>" +
+" </div>" +
+"" +
+" <div id=\"displaychat\" style=\"display:none;\">" +
+"   <div class=\"chatbox-holder\">" +
+"       <div class=\"chatbox\" id=\"chatbbox\">" +
+"         <div class=\"chatbox-top\">" +
+"           <div class=\"chatbox-avatar\">" +
+"             <a target=\"_blank\" href=\"\"><img id=\"icon_admin\" src=\"https://cdn-icons-png.flaticon.com/128/2543/2543339.png\" /></a>" +
+"           </div>" +
+"           <div class=\"chat-partner-name\">" +
+"             <!-- <span id=\"status\" class=\"status donot-disturb\"></span> -->" +
+"             <a target=\"_blank\" id=\"nama_admin\" href=\"\">Live Chat</a>" +
+"           </div>" +
+"           <div class=\"chatbox-icons\">" +
+"          <!--    <a href=\"javascript:void(0);\"><i id=\"click\" class=\"fa fa-minus\"></i></a> -->" +
+"             <a href=\"javascript:void(0);\"><i class=\"fa fa-close\"></i></a>" +
+"           </div>" +
+"         </div>" +
+"         <div class=\"container-fluid col-lg-12 p-4\" id=\"form_layanan\">" +
+"           <h3>Hallo ... 👋</h3>" +
+"           <div class=\"list-group\"  id=\"groupLayanan\">" +
+"           </div>" +
+" <br>" +
+" <button class=\"btn btn-info text-white\" onclick=\"MenghubugkanAdmin()\">Hubungkan Saya Ke Admin</button>" +
+"          </div>" +
+"         <div class=\"container-fluid col-lg-12 \" style=\"display:none;\" id=\"form_login\">" +
+"           <input type=\"text\" placeholder=\"Email\" class=\"form-control\" style=\"margin-top:50px;\" id=\"username\">" +
+"           <br>" +
+"" +
+"           <button onclick=\"joined()\" class=\"btn btn-info float-left text-white\" id=\"submit\">Submit</button>" +
+"          </div>" +
+"" +
+"         <div class=\"chat-messages\" id=\"chhhtt\">" +
+"            <!-- <div class=\"message-box-holder\">" +
+"             <div class=\"message-box\">" +
+"               Hello Gaessss !!!" +
+"             </div>" +
+"           </div> -->" +
+"         </div>" +
+"" +
+"         <div class=\"chat-input-holder\" style=\"display:none;\" id=\"form_chat\">" +
+"           <textarea id=\"pesan\" placeholder=\"Write Your Message\" class=\"chat-input\"></textarea>" +
+"           <div class=\"file_img\">" +
+"             <i class=\"fa fa-image fa-xl\" onclick=\"openFILE()\"></i>" +
+"           </div>" +
+"           <input id=\"fileid\" onchange=\"return validasiEkstensi() \" type=\"file\" hidden/>" +
+"" +
+"           <button type=\"submit\"  onclick=\"Submit_Pesan()\" class=\"message-send\" >" +
+"           <img src=\"https://cdn-icons-png.flaticon.com/128/9131/9131510.png\" style=\"width:20px;margin-bottom: 20px;color:blue;\" alt=\"\">" +
+"         </button>" +
+"" +
+"         </div>" +
+"               <small>&copy; 2023 Powered By CrashTeam.</small>" +
+"       </div>" +
+"     </div>" +
+"   </div>" +
+"" +
+"";
+var body = document.getElementsByTagName('body')[0]; // Mendapatkan referensi elemen body
+// Menambahkan elemen baru ke dalam body
+body.innerHTML = variable;
 GetLayananBot()
 AturStyle()
 $('.fa-minus').click(function() {
