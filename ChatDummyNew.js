@@ -91,7 +91,7 @@ var variable = "" +
 "   </div>" +
 "" +
 "";
-var body = document.getElementsByTagName('body')[0]; // Mendapatkan referensi elemen body
+var body = document.getElementById('DummyChatId'); // Mendapatkan referensi elemen body
 // Menambahkan elemen baru ke dalam body
 body.innerHTML = variable;
 GetLayananBot()
