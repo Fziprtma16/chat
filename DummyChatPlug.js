@@ -240,20 +240,13 @@ function Reconn(){
     textAutoResize: true,
     textResizeFactor: '0,5'
   });
-    var username = $("#username").val();
-    var Rooms = roomsID;
-    socket.emit('create-session', {
-      username: usernameLog,
-      rooms: Rooms
-    });
-
-    socket.on('login', (datavalue) => {
-      //console.log(datavalue);
-      if (datavalue.rooms == roomsID) {
-        console.log(datavalue);
-          $(".chat-messages").LoadingOverlay("hide");
-      }
-    });
+  socket.on('login', (datavalue) => {
+    console.log(datavalue);
+    if (datavalue.rooms == roomsID) {
+      getUsers(datavalue.users, datavalue.id, datavalue.rooms);
+      get_history(datavalue.users, datavalue.id, datavalue.rooms);
+    }
+  });
 }
 
 function Login(usernameLog, Rooms) {
@@ -453,9 +446,8 @@ function get_history(username, idS) {
   var idAdmin = $("#socketIDAdmin").val();
   var url = "https://pertalis.com/chat_apps/Admin/api/get_history.php?username=" + username + "&rooms=" + roomsID + "&idS=" + idS + "&idAdmin=" + idAdmin;
   console.log(url);
-    $areapesan.empty();
   $.getJSON(url, function(data) {
-
+    $areapesan.empty();
     $.each(data.result, function() {
       if (this['username_send'] == "admin") {
         if (this['type'] == "text") {
