@@ -240,7 +240,7 @@ function Reconn(){
     textAutoResize: true,
     textResizeFactor: '0,5'
   });
-  socket.on('login', (datavalue) => {
+  socket.on('reconnect', (datavalue) => {
     console.log(datavalue);
     if (datavalue.rooms == roomsID) {
       getUsers(datavalue.users, datavalue.id, datavalue.rooms);
