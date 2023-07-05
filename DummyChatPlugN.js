@@ -249,7 +249,7 @@ function Reconn(){
     console.log(datavalue);
     if (datavalue.rooms == roomsID) {
       // getUsers(datavalue.users, datavalue.id, datavalue.rooms);
-      get_history(datavalue.users, datavalue.id, datavalue.rooms);
+      get_history(usernameLog, datavalue.id, datavalue.rooms);
     }
   });
 }
