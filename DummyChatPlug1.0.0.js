@@ -233,7 +233,29 @@ function joined() {
   }
 }
 
+function Reconn(){
+  $(".chat-messages").LoadingOverlay("show", {
+    background: "rgba(243, 243, 243, 0.65)",
+    image: "",
+    text: "Menghubungkan Chat ",
+    textAutoResize: true,
+    textResizeFactor: '0,5'
+  });
+    var username = $("#username").val();
+    var Rooms = roomsID;
+    socket.emit('create-session', {
+      username: usernameLog,
+      rooms: Rooms
+    });
 
+    socket.on('login', (datavalue) => {
+      //console.log(datavalue);
+      if (datavalue.rooms == roomsID) {
+        console.log(datavalue);
+          $(".chat-messages").LoadingOverlay("hide");
+      }
+    });
+}
 
 function Login(usernameLog, Rooms) {
   socket.emit('create-session', {
@@ -286,15 +308,17 @@ function Login(usernameLog, Rooms) {
     log(data.username, data.id, data.username + ' left');
   });
 
+  socket.on('disconnect', () => {
+    setTimeout(() => {
+      Reconn() // Terhubung kembali ke server Socket.IO
+    }, 1000);
+    console.log('ERROR CODE');
+    // log('','','you have been disconnected');
+  });
+
 }
 
-socket.on('disconnect', () => {
-  setTimeout(() => {
-    joined() // Terhubung kembali ke server Socket.IO
-  }, 1000);
-  console.log('ERROR CODE');
-  // log('','','you have been disconnected');
-});
+
 
 function getUsers(username, idusers) {
   $("#name").html(username);
