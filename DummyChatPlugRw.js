@@ -240,6 +240,11 @@ function Reconn(){
     textAutoResize: true,
     textResizeFactor: '0,5'
   });
+  var usernameLog = $("#username").val();
+  socket.emit('create-session', {
+    username: usernameLog,
+    rooms: roomsID
+  });
   socket.on('reconnect', (datavalue) => {
     console.log(datavalue);
     if (datavalue.rooms == roomsID) {
