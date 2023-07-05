@@ -285,18 +285,14 @@ function Login(usernameLog, Rooms) {
   });
   socket.on('pesan', function(valmsg) {
     if (valmsg.rooms == roomsID) {
-      $('.click-show').css("display", "none");
-      $("#wa_class").css("display", "none");
-      $("#displaychat").css("display", "block");
+
       NewPesan(valmsg.value, valmsg.username, valmsg.nameto);
     }
   })
   socket.on('pesan_img', function(valmsg) {
     // console.log(valmsg.base64);
     if (valmsg.rooms == roomsID) {
-      $('.click-show').css("display", "none");
-      $("#wa_class").css("display", "none");
-      $("#displaychat").css("display", "block");
+
       NewPesan_img(valmsg.base64, valmsg.username, valmsg.nameto, valmsg.caption);
     }
   })
@@ -344,6 +340,9 @@ const NewPesan = (value, username, nameto) => {
   // Membuat format waktu
   var formatWaktu = tahun + '-' + bulan + '-' + tanggal + ' ' + jam + ':' + menit + ':' + detik;
   if (username == "admin" && nameTo == usernamexx) {
+    $('.click-show').css("display", "none");
+    $("#wa_class").css("display", "none");
+    $("#displaychat").css("display", "block");
     bunyi()
     getUnreadMessage(usernamex, idS)
     $areapesan.append('  <div class="message-box-holder">' + '<div  class="message-sender">' + '<img style="float:left;" class="avatar_img_admin" src="https://cdn-icons-png.flaticon.com/128/2343/2343177.png">' + '<div  style="display:block;width:350px;">' + '<span class="span_avatar">Admin</span>' + '</div style="margin-bottom:15px;">' + formatWaktu + '</div>' + '<div class="message-box message-partner">' + value + '</div>' + '</div>');
@@ -370,14 +369,11 @@ const NewPesan_img = (base64, username, nameto, caption) => {
   var formatWaktu = tahun + '-' + bulan + '-' + tanggal + ' ' + jam + ':' + menit + ':' + detik;
   getUnreadMessage(usernamex, idS)
   if (username == "admin" && nameto == usernamex) {
+    $('.click-show').css("display", "none");
+    $("#wa_class").css("display", "none");
+    $("#displaychat").css("display", "block");
     bunyi();
     $areapesan.append('  <div class="message-box-holder">' + '<div  class="message-sender">' + '<img style="float:left;" class="avatar_img_admin" src="https://cdn-icons-png.flaticon.com/128/2343/2343177.png">' + '<div  style="display:block;width:350px;">' + '<span class="span_avatar">Admin</span>' + '</div>' + formatWaktu + '</div>' + '<div class="message-box message-partner">' + '<p><img style="width:100%;" onclick="zoomin(this.id);zoomout(this.id);return false;" id="' + base64 + '" src="' + base64 + '"><p>' + '<p>' + caption + '</p>' + '</div>' + '</div>');
-  }
-  else if (usernamex == "admin") {
-    $areapesan.append('<div class="message-box-holder">' + '<div class="message-sender"> <i class="fa fa-reply" onclick="reply(\'' + username + '\',\'' + value + '\')"></i>  ' + username + '</div>' + '<div class="message-box message-partner">' + value + '</div>' + '</div>');
-  }
-  else if (username == usernamex) {
-    $areapesan.append('<div class="message-box-holder">' + '<div class="message-sender">' + username + '</div>' + '<div class="message-box message-partner">' + '<p><img src="' + base64 + '"><p>' + '<p>' + caption + '</p>' + '</div>' + '</div>');
   }
 }
 
