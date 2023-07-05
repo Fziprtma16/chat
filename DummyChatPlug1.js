@@ -453,8 +453,9 @@ function get_history(username, idS) {
   var idAdmin = $("#socketIDAdmin").val();
   var url = "https://pertalis.com/chat_apps/Admin/api/get_history.php?username=" + username + "&rooms=" + roomsID + "&idS=" + idS + "&idAdmin=" + idAdmin;
   console.log(url);
-  $.getJSON(url, function(data) {
     $areapesan.empty();
+  $.getJSON(url, function(data) {
+
     $.each(data.result, function() {
       if (this['username_send'] == "admin") {
         if (this['type'] == "text") {
