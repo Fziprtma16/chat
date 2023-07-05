@@ -289,10 +289,10 @@ function Login(usernameLog, Rooms) {
 }
 
 socket.on('disconnect', () => {
-  // setTimeout(() => {
-  //   joined() // Terhubung kembali ke server Socket.IO
-  // }, 1000);
-  console.log('ERROR');
+  setTimeout(() => {
+    joined() // Terhubung kembali ke server Socket.IO
+  }, 1000);
+  console.log('ERROR CODE');
   // log('','','you have been disconnected');
 });
 
