@@ -243,7 +243,7 @@ function Reconn(){
   socket.on('reconnect', (datavalue) => {
     console.log(datavalue);
     if (datavalue.rooms == roomsID) {
-      getUsers(datavalue.users, datavalue.id, datavalue.rooms);
+      // getUsers(datavalue.users, datavalue.id, datavalue.rooms);
       get_history(datavalue.users, datavalue.id, datavalue.rooms);
     }
   });
