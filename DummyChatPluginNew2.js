@@ -447,6 +447,10 @@ function getUnreadMessage(username, idsocket) {
 
 function get_history(username, idS) {
   var idAdmin = $("#socketIDAdmin").val();
+  let current = new Date();
+  let cDate = current.getFullYear() + '-' + (current.getMonth() + 1) + '-' + current.getDate();
+  let cTime = current.getHours() + ":" + current.getMinutes() + ":" + current.getSeconds();
+  let dateTime = cDate + ' ' + cTime;
   var url = "https://pertalis.com/chat_apps/Admin/api/get_history.php?username=" + username + "&rooms=" + roomsID + "&idS=" + idS + "&idAdmin=" + idAdmin;
   console.log(url);
   $.getJSON(url, function(data) {
