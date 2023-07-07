@@ -107,7 +107,7 @@ var variable = '' +
 '         </button>' +
 '' +
 '         </div>' +
-'               <small>&copy; 2023 Powered By CrashTeam.</small>' +
+'               <small>&copy; 2023 Powered By DumyTeam.</small>' +
 '       </div>' +
 '     </div>' +
 '   </div>' +
@@ -199,7 +199,9 @@ function GetLayananBot() {
   $.getJSON(url, function(data) {
     $("#groupLayanan").empty();
     $.each(data.result, function() {
-      $("#groupLayanan").append('<a href="' + this['link'] + '" class="list-group-item list-group-item-action list-group-item-info">' + this['NamaLayanan'] + '</a>');
+      $("#groupLayanan").append('<a href="' + this['link'] + '" style="border:1px solid black;color:blue;border-radius:10px;padding:10px;" class="list-group-item list-group-item-action list-group-item mb-2 col-6 list-group-item-light">' +
+      this['NamaLayanan'] +
+     '</a>');
     });
   });
 }
