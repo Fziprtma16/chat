@@ -451,6 +451,11 @@ function get_history(username, idS) {
   console.log(url);
   $.getJSON(url, function(data) {
     $areapesan.empty();
+    if (data.result <= 0) {
+       $areapesan.append('  <div class="message-box-holder">' + '<div  class="message-sender">' + '<img style="float:left;" class="avatar_img_admin" src="https://cdn-icons-png.flaticon.com/128/2343/2343177.png">' + '<div  style="display:block;width:350px;">' + '<span class="span_avatar">Admin</span>' + '</div>' + dateTime + '</div>' + '<div class="message-box message-partner"> Hallo .. Ada Yang Bisa Kami Bantu ? </div>' + '</div>');
+
+
+    }
     $.each(data.result, function() {
       if (this['username_send'] == "admin") {
         if (this['type'] == "text") {
