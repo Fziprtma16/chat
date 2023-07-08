@@ -100,6 +100,9 @@ var variable = '' +
 '           <div class="file_img">' +
 '             <i class="fa fa-image fa-xl" onclick="openFILE()"></i>' +
 '           </div>' +
+'       <div class="file_img">'+
+'     <i class="fa fa-file-arrow-down fa-xl" onclick="unduhFile()"></i>'+
+'       </div>'+
 '           <input id="fileid" onchange="return validasiEkstensi() " type="file" hidden/>' +
 '' +
 '           <button type="submit"  onclick="Submit_Pesan()" class="message-send" >' +
@@ -614,6 +617,20 @@ function send_img() {
   $("#caption_img").val('');
   closePopup();
 }
+
+function unduhFile(){
+    var username = $("#username").val();
+  var url = "https://pertalis.com/chat_apps/Admin/api/download_riwayat_chat.php?username="+username+"&rooms="+roomsID;
+  $.get(url, function(data) {
+    var link = document.createElement('a');
+    link.href = 'data:text/plain;charset=utf-8,' + encodeURIComponent(data);
+    link.download = 'Riwayat Chat '+username+'.txt';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  });
+}
+
 
 function bunyi() {
   var bel = new Audio('widget/smile.ogg');
