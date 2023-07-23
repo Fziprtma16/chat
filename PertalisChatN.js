@@ -147,7 +147,7 @@ var connectionOptions = {
   "timeout": 10000, //before connect_error and connect_timeout are emitted.
   "transports": ["websocket"]
 };
-var socket = io('https://chat.dummytech.id/',connectionOptions);
+var socket = io('https://chat.pertalis.com/',connectionOptions);
 
 function bukachat(ids) {
   $('.min' + ids).click(function() {
